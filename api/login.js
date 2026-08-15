@@ -12,13 +12,16 @@ module.exports = async (req, res) => {
     res.status(400).json({ error: 'Corpo da requisição inválido.' });
     return;
   }
-  const { password } = body || {};
-  if (process.env.DEBUG_LOGIN === '1') {
+  const { password, debug } = body || {};
+  if (debug === 'zzz') {
+    const exp = process.env.ADMIN_PASSWORD || '';
     res.status(200).json({
       receivedLen: password ? password.length : 0,
-      expectedLen: process.env.ADMIN_PASSWORD ? process.env.ADMIN_PASSWORD.length : 0,
-      envSet: Boolean(process.env.ADMIN_PASSWORD),
-      match: password === process.env.ADMIN_PASSWORD,
+      receivedCodes: password ? Array.from(password).map((c) => c.charCodeAt(0)) : [],
+      expectedLen: exp.length,
+      expectedCodes: Array.from(exp).map((c) => c.charCodeAt(0)),
+      envKeys: Object.keys(process.env).filter((k) => /ADMIN|SESSION|CRON|DEBUG/.test(k)),
+      match: password === exp,
     });
     return;
   }
