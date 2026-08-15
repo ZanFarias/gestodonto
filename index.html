@@ -282,6 +282,38 @@
   .chk-item.done label { color: var(--ink-faint); text-decoration: line-through; text-decoration-color: var(--border); }
   .checklist-note { font-size: .82rem; color: var(--ink-faint); margin-top: 1.4rem; max-width: 62ch; }
 
+  /* ---------- Marketing / content calendar ---------- */
+  .pillar-legend { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.2rem 0 2rem; }
+  .pillar-chip {
+    font-size: .78rem; padding: .3rem .75rem; border-radius: 999px;
+    background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--border);
+  }
+  .cadence-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.2rem 1.4rem; box-shadow: var(--shadow); margin-bottom: 2rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem;
+  }
+  @media (max-width: 720px) { .cadence-card { grid-template-columns: 1fr; } }
+  .cadence-card .ck { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); font-weight: 700; margin-bottom: .35rem; }
+  .cadence-card .cv { font-size: .95rem; color: var(--ink); }
+
+  .pill-carrossel { background: var(--accent-soft); color: var(--accent); border: none; font-weight: 700; font-size: .7rem; padding: .15rem .55rem; border-radius: 999px; }
+  .pill-video { background: var(--gold-soft); color: var(--gold); border: none; font-weight: 700; font-size: .7rem; padding: .15rem .55rem; border-radius: 999px; }
+
+  .week-count { font-size: .78rem; font-weight: 700; color: var(--ink-soft); }
+
+  .post-card { border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.15rem; margin: .8rem 0; background: var(--surface-2); }
+  .post-head { display: flex; align-items: center; gap: .55rem; flex-wrap: wrap; margin-bottom: .5rem; }
+  .post-num { font-family: var(--font-display); font-weight: 800; color: var(--ink-faint); font-size: .85rem; }
+  .post-pillar { font-size: .78rem; color: var(--ink-faint); }
+  .post-hook { font-size: 1.02rem; margin: .3rem 0 .7rem; }
+  .script-row { display: grid; grid-template-columns: 8.5rem 1fr; gap: .6rem; font-size: .89rem; padding: .35rem 0; border-bottom: 1px dashed var(--border); }
+  .script-row:last-of-type { border-bottom: none; }
+  .script-row b { color: var(--ink-soft); font-weight: 700; }
+  .script-row span { color: var(--ink); }
+  .post-caption { margin-top: .7rem; font-size: .86rem; color: var(--ink-soft); background: var(--surface); border-radius: 8px; padding: .6rem .8rem; border: 1px solid var(--border); }
+  .post-caption b { color: var(--ink); }
+
   footer { padding: 2.6rem 0 4rem; border-top: 1px solid var(--border); }
   footer p { color: var(--ink-faint); font-size: .82rem; max-width: 60ch; }
   footer .conf { color: var(--gold); font-weight: 700; }
@@ -298,6 +330,7 @@
       <a href="#organograma">Organograma</a>
       <a href="#departamentos">Departamentos</a>
       <a href="#roadmap">Roadmap 5 anos</a>
+      <a href="#marketing">Marketing</a>
     </div>
   </div>
 </nav>
@@ -919,6 +952,414 @@
       <div class="milestone"><span class="yr">04</span><div class="body"><b>Expansão</b><span>Upsell de módulos adicionais, parcerias com associações e faculdades de odontologia, possível início de expansão regional.</span></div></div>
       <div class="milestone"><span class="yr">05</span><div class="body"><b>Consolidação</b><span>Empresa como referência no segmento de gestão para clínicas odontológicas — ponto de decisão entre rodada Série A, sustentabilidade via lucro, ou expansão internacional.</span></div></div>
     </div>
+  </div>
+</section>
+
+<section id="marketing">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Divulgação</div>
+      <h2>Plano de conteúdo de lançamento — 30 posts</h2>
+      <p>Cada post mostra <b>uma funcionalidade real do GestOdonto</b> resolvendo uma dor concreta de clínica — linguagem simples, tom leve, sempre com a tela do sistema aparecendo. O roteiro já vem pronto slide a slide (carrossel) ou cena a cena (vídeo), pra quem for produzir — designer ou quem gravar o vídeo — não precisar inventar o que falar.</p>
+    </div>
+
+    <div class="cadence-card">
+      <div><div class="ck">Cadência</div><div class="cv">3 posts por semana — seg / qua / sex</div></div>
+      <div><div class="ck">Duração</div><div class="cv">10 semanas (~2,5 meses) para os 30 posts</div></div>
+      <div><div class="ck">Formato</div><div class="cv">Alterna a cada post: Carrossel → Vídeo → Carrossel...</div></div>
+    </div>
+
+    <div class="notice" style="margin-top:0;">
+      <b>Como produzir rápido, sem time dedicado:</b> grave/print sempre a tela real do sistema (não precisa arte sofisticada) · gancho forte nos primeiros 3 segundos, antes de qualquer explicação · uma funcionalidade por post, nunca várias ao mesmo tempo · frases curtas, sem jargão técnico · feche sempre com o mesmo CTA ("testa grátis 7 dias, link na bio") pra criar repetição de marca.
+    </div>
+
+    <div class="pillar-legend">
+      <span class="pillar-chip">Agenda</span>
+      <span class="pillar-chip">Pacientes (Ficha 360°)</span>
+      <span class="pillar-chip">Prontuário</span>
+      <span class="pillar-chip">Odontograma</span>
+      <span class="pillar-chip">Financeiro</span>
+      <span class="pillar-chip">WhatsApp</span>
+      <span class="pillar-chip">Documentos da clínica</span>
+      <span class="pillar-chip">Permissões &amp; Auditoria</span>
+      <span class="pillar-chip">Relatórios</span>
+      <span class="pillar-chip">Tarefas &amp; Branding</span>
+      <span class="pillar-chip">IA clínica</span>
+      <span class="pillar-chip">Onboarding</span>
+      <span class="pillar-chip">Importação de dados</span>
+      <span class="pillar-chip">Suporte</span>
+      <span class="pillar-chip">Institucional</span>
+    </div>
+
+    <!-- Semana 1 -->
+    <details class="grp" open>
+      <summary>
+        <div class="grp-head-l"><span class="letter">S1</span><h3>Semana 1</h3></div>
+        <div class="grp-head-r"><span class="week-count">Posts #01–#03</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="grp-body">
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#01</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Agenda</span></div>
+          <h4 class="post-hook">"Sua agenda ainda é uma zona de guerra às segundas de manhã?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima, em texto grande.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Papel, WhatsApp da recepção e caderno de horário — ninguém sabe se aquele horário das 14h foi remarcado três vezes.</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>No GestOdonto, a Agenda mostra o dia, a semana ou a lista completa, com filtro por profissional e resumo do dia assim que você abre o sistema.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print da Agenda em visão "Dia", destacando o filtro por profissional e o resumo do dia no topo.</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Testa grátis por 7 dias e organiza sua semana em 5 minutos. Link na bio.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Segunda-feira sem correria começa com uma agenda que faz sentido. 🦷 #GestOdonto</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#02</span><span class="pill-video">Vídeo</span><span class="post-pillar">WhatsApp</span></div>
+          <h4 class="post-hook">"Quantas faltas sua clínica teve esse mês?"</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Pessoa com celular na mão, texto na tela com a pergunta acima.</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Gravação de tela: lembrete automático saindo no WhatsApp do paciente → confirmação chegando de volta → aparecendo na agenda. Narração: "No GestOdonto, o lembrete vai sozinho pro WhatsApp do paciente — e a confirmação já aparece aqui, sem ninguém precisar ligar."</span></div>
+          <div class="script-row"><b>CTA (20–25s)</b><span>"Menos falta, mais cadeira ocupada. Testa grátis, link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Cada falta é uma cadeira vazia que custou dinheiro. Automatiza isso. 📲</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#03</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Institucional</span></div>
+          <h4 class="post-hook">"Por que criamos o GestOdonto?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Porque vimos dentista bom de clínica virando refém de sistema ruim — travando, sem suporte, difícil de usar.</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>Criamos um sistema pensado pra quem atende, não pra quem programa: simples de aprender, rápido no dia a dia.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print da tela inicial/dashboard, mostrando o visual limpo do sistema.</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Se você já sofreu com sistema de clínica, testa o GestOdonto. Link na bio.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Gestão de clínica não devia ser a parte mais difícil do seu dia. 🦷</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Semana 2 -->
+    <details class="grp">
+      <summary>
+        <div class="grp-head-l"><span class="letter">S2</span><h3>Semana 2</h3></div>
+        <div class="grp-head-r"><span class="week-count">Posts #04–#06</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="grp-body">
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#04</span><span class="pill-video">Vídeo</span><span class="post-pillar">Prontuário</span></div>
+          <h4 class="post-hook">"Você lembra o que anotou no prontuário há 3 meses?"</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Texto na tela com a pergunta, cara de "quem nunca".</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Tela do Prontuário: uma evolução clínica já assinada, com data, e o histórico em timeline. Narração: "No GestOdonto cada evolução fica assinada, com data — você acessa o histórico completo em segundos, nada de caderno ou pasta perdida."</span></div>
+          <div class="script-row"><b>CTA</b><span>"Prontuário organizado é paciente bem cuidado. Link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Sua memória não devia ser o prontuário da clínica. 📋</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#05</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Odontograma</span></div>
+          <h4 class="post-hook">"Explicar tratamento pro paciente sem desenho na mão?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Explicar um canal ou extração só de boca deixa o paciente com mais dúvida do que confiança.</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>O Odontograma do GestOdonto é um mapa visual da boca, conectado ao histórico e ao orçamento — mostra o dente e o tratamento na tela.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print do Odontograma com um dente marcado/alertado e o tratamento ao lado.</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Paciente que entende o tratamento confia mais e falta menos. Testa grátis.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Um bom desenho vale mais que mil explicações. 🦷</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#06</span><span class="pill-video">Vídeo</span><span class="post-pillar">Financeiro</span></div>
+          <h4 class="post-hook">"Você sabe exatamente quanto vai entrar de caixa essa semana?"</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Pergunta na tela, tom de "sejamos sinceros".</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Tela do Financeiro: contas a receber filtradas por status (pago/pendente). Narração: "No GestOdonto, contas a receber, convênios e comissões ficam num só lugar — você abre e já sabe o que entra e o que está atrasado."</span></div>
+          <div class="script-row"><b>CTA</b><span>"Financeiro claro é decisão mais fácil. Link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Se seu financeiro só existe na cabeça do sócio, tá na hora de mudar. 💰</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Semana 3 -->
+    <details class="grp">
+      <summary>
+        <div class="grp-head-l"><span class="letter">S3</span><h3>Semana 3</h3></div>
+        <div class="grp-head-r"><span class="week-count">Posts #07–#09</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="grp-body">
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#07</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Pacientes (Ficha 360°)</span></div>
+          <h4 class="post-hook">"Onde está a ficha completa do seu paciente agora?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Espalhada entre WhatsApp, papel, planilha e a memória de quem atendeu da última vez.</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>No GestOdonto, cada paciente tem ficha única: dados, timeline, documentos, agenda, financeiro, orçamentos e anamnese — tudo no mesmo lugar.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print da tela do Paciente, mostrando as abas (timeline, financeiro, documentos).</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Atendimento rápido começa com informação na mão. Testa grátis 7 dias.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Tudo sobre o paciente, num clique. Sem adivinhação. 🗂️</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#08</span><span class="pill-video">Vídeo</span><span class="post-pillar">Agenda</span></div>
+          <h4 class="post-hook">"Sua clínica tem mais de um dentista? Presta atenção nisso."</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela, cara de dica.</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Alternando o filtro de profissional na Agenda, mostrando a agenda de cada dentista isolada. Narração: "Com o filtro por profissional, cada dentista vê só a própria agenda — e a recepção enxerga todo mundo ao mesmo tempo, sem bagunça."</span></div>
+          <div class="script-row"><b>CTA</b><span>"Cada profissional na sua agenda, sem confusão. Link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Clínica com vários dentistas precisa de agenda que aguenta o tranco. 📅</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#09</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">WhatsApp</span></div>
+          <h4 class="post-hook">"Sabia que confirmar consulta por WhatsApp reduz falta?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Ligar pra confirmar consulta toma tempo da recepção — e ainda assim tem gente que esquece.</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>O GestOdonto manda a confirmação automática pelo WhatsApp e registra a resposta do paciente direto na agenda.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print do histórico de mensagens de WhatsApp dentro da ficha do paciente.</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Menos ligação, menos falta. Testa grátis.</span></div>
+          <div class="post-caption"><b>Legenda:</b> A recepção agradece — e o caixa também. 📲</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Semana 4 -->
+    <details class="grp">
+      <summary>
+        <div class="grp-head-l"><span class="letter">S4</span><h3>Semana 4</h3></div>
+        <div class="grp-head-r"><span class="week-count">Posts #10–#12</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="grp-body">
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#10</span><span class="pill-video">Vídeo</span><span class="post-pillar">Odontograma</span></div>
+          <h4 class="post-hook">"Esse tratamento ficou pra depois... e sua clínica esqueceu."</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima, tom de alerta leve.</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Odontograma mostrando um alerta visual de tratamento pendente num dente específico. Narração: "O Odontograma guarda o alerta do tratamento pendente — na próxima consulta, ele aparece sozinho, sem depender da memória de ninguém."</span></div>
+          <div class="script-row"><b>CTA</b><span>"Tratamento pendente não escapa mais. Link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Esse canal que ficou pra depois? O sistema não esquece. 🦷</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#11</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Documentos da clínica</span></div>
+          <h4 class="post-hook">"Atestado feito no Word, com fonte errada, sem logo?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Documento sem identidade passa a impressão errada — mesmo quando o atendimento foi ótimo.</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>No GestOdonto, atestados, prescrições e orçamentos saem prontos, com a identidade visual da sua clínica, direto do prontuário.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print de um atestado/orçamento gerado com o logo da clínica.</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Documento profissional em segundos. Testa grátis.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Detalhe pequeno, impressão grande. 📄</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#12</span><span class="pill-video">Vídeo</span><span class="post-pillar">Prontuário</span></div>
+          <h4 class="post-hook">"Anamnese em papel some. Anamnese digital não."</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela.</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Tela de anamnese estruturada sendo preenchida, campos organizados. Narração: "A anamnese do GestOdonto é estruturada — perguntas certas, no lugar certo, e fica salva pra sempre na ficha do paciente."</span></div>
+          <div class="script-row"><b>CTA</b><span>"Nada se perde, nada fica pela metade. Link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Anamnese completa é atendimento mais seguro. 🩺</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Semana 5 -->
+    <details class="grp">
+      <summary>
+        <div class="grp-head-l"><span class="letter">S5</span><h3>Semana 5</h3></div>
+        <div class="grp-head-r"><span class="week-count">Posts #13–#15</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="grp-body">
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#13</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Financeiro</span></div>
+          <h4 class="post-hook">"Convênio e comissão de dentista, tudo na mesma planilha confusa?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Calcular repasse de convênio e comissão na mão é fonte garantida de erro (e de discussão no fim do mês).</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>O Financeiro do GestOdonto organiza convênios, comissões e recebimentos com relatório pronto pra fechar o mês.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print do relatório financeiro com comissões por profissional.</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Fim de mês sem dor de cabeça. Testa grátis 7 dias.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Comissão certa é sócio e equipe em paz. 💼</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#14</span><span class="pill-video">Vídeo</span><span class="post-pillar">Relatórios</span></div>
+          <h4 class="post-hook">"Sua clínica está lucrando ou só parece que está?"</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Pergunta provocativa na tela.</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Tela de relatórios avançados com gráficos de faturamento/atendimentos. Narração: "Os relatórios do GestOdonto mostram o que realmente importa: quanto entrou, quanto falta receber e onde a clínica performa melhor."</span></div>
+          <div class="script-row"><b>CTA</b><span>"Decisão com dado, não com achismo. Link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Achismo não paga conta. Relatório sim. 📊</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#15</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Agenda</span></div>
+          <h4 class="post-hook">"Você abre o sistema de manhã e já sabe como vai ser seu dia?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Sem visão clara, o dia começa no improviso — e qualquer imprevisto vira caos.</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>O resumo do dia do GestOdonto mostra, assim que você abre o sistema, quantas consultas tem, horários livres e o que precisa de atenção.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print do resumo do dia na tela inicial da Agenda.</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Comece o dia sabendo o que vem por aí. Testa grátis.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Dia organizado começa antes do primeiro paciente chegar. ☀️</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Semana 6 -->
+    <details class="grp">
+      <summary>
+        <div class="grp-head-l"><span class="letter">S6</span><h3>Semana 6</h3></div>
+        <div class="grp-head-r"><span class="week-count">Posts #16–#18</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="grp-body">
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#16</span><span class="pill-video">Vídeo</span><span class="post-pillar">WhatsApp</span></div>
+          <h4 class="post-hook">"Paciente reclamou de algo e ninguém lembra da conversa?"</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela.</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Histórico de mensagens de WhatsApp dentro da ficha do paciente, com data e conteúdo visível. Narração: "Toda conversa de WhatsApp com o paciente fica registrada na ficha dele — se precisar consultar depois, está tudo ali."</span></div>
+          <div class="script-row"><b>CTA</b><span>"Nada se perde na conversa. Link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Histórico completo, sem "ele disse, ela disse". 💬</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#17</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">IA clínica</span></div>
+          <h4 class="post-hook">"E se o sistema resumisse o prontuário pra você?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Ler todo o histórico de um paciente antigo antes de cada retorno toma tempo que você não tem entre um atendimento e outro.</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>A IA clínica do GestOdonto gera um resumo do histórico do paciente, direto no prontuário, pra você se atualizar em segundos.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print do resumo clínico gerado por IA dentro do prontuário.</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Menos tempo lendo, mais tempo atendendo. Testa grátis.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Resumo pronto antes de você abrir a boca do paciente. 🤖🦷</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#18</span><span class="pill-video">Vídeo</span><span class="post-pillar">Odontograma</span></div>
+          <h4 class="post-hook">"Paciente pergunta 'quanto custa esse tratamento?' e você trava?"</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima, cara de situação incômoda reconhecível.</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Clique no dente do odontograma abrindo direto a tela de orçamento daquele tratamento. Narração: "Direto do odontograma, você já monta o orçamento daquele dente e daquele tratamento — sem sair da tela, sem calculadora do celular."</span></div>
+          <div class="script-row"><b>CTA</b><span>"Orçamento na hora, sem gaguejar. Link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Do dente ao orçamento em um clique. 💰🦷</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Semana 7 -->
+    <details class="grp">
+      <summary>
+        <div class="grp-head-l"><span class="letter">S7</span><h3>Semana 7</h3></div>
+        <div class="grp-head-r"><span class="week-count">Posts #19–#21</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="grp-body">
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#19</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Permissões &amp; Auditoria</span></div>
+          <h4 class="post-hook">"Sua recepção tem acesso ao financeiro inteiro da clínica?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Sistema sem controle de permissão é porta aberta pra erro (e, às vezes, pra coisa pior).</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>No GestOdonto, cada função da equipe tem seu nível de acesso — e tudo o que é feito no sistema fica registrado na auditoria.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print da tela de permissões por função.</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Controle de verdade sobre quem vê o quê. Testa grátis.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Confiança na equipe + controle no sistema. 🔐</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#20</span><span class="pill-video">Vídeo</span><span class="post-pillar">Pacientes (Ficha 360°)</span></div>
+          <h4 class="post-hook">"Quer saber tudo que já aconteceu com esse paciente, sem abrir 5 telas?"</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela.</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Rolando a timeline do paciente: consultas passadas, documentos e pagamentos em ordem cronológica. Narração: "A timeline do paciente junta consulta, documento e pagamento numa linha só do tempo — você rola e já entende a história inteira."</span></div>
+          <div class="script-row"><b>CTA</b><span>"A história do paciente, em uma rolada de tela. Link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Contexto completo antes de abrir a boca. 🕐</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#21</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Documentos da clínica</span></div>
+          <h4 class="post-hook">"Orçamento genérico não fecha tratamento."</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Um orçamento mal formatado, sem cara de profissional, faz o paciente hesitar e pesquisar em outro lugar.</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>No GestOdonto, o orçamento sai com a identidade da sua clínica, detalhado, pronto pra enviar por WhatsApp ou e-mail.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print de um orçamento gerado, com o layout com a marca da clínica.</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Orçamento bonito também vende. Testa grátis.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Primeira impressão do orçamento pode fechar (ou perder) o tratamento. 📑</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Semana 8 -->
+    <details class="grp">
+      <summary>
+        <div class="grp-head-l"><span class="letter">S8</span><h3>Semana 8</h3></div>
+        <div class="grp-head-r"><span class="week-count">Posts #22–#24</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="grp-body">
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#22</span><span class="pill-video">Vídeo</span><span class="post-pillar">Financeiro</span></div>
+          <h4 class="post-hook">"Quanto da sua clínica está pendurado em 'depois eu recebo'?"</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela.</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Relatório de recebimentos com contas em aberto por paciente. Narração: "O relatório de recebimentos do GestOdonto mostra exatamente quem deve, quanto deve e desde quando — sem caçar em conversa antiga."</span></div>
+          <div class="script-row"><b>CTA</b><span>"Cobrar fica mais fácil quando o número está na tela. Link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Inadimplência não se resolve sozinha — mas começa sendo enxergada. 📉</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#23</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Tarefas &amp; Branding</span></div>
+          <h4 class="post-hook">"Sua equipe sabe exatamente o que precisa fazer hoje?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Recado no grupo de WhatsApp da equipe some na rolagem — e a tarefa importante fica esquecida.</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>O GestOdonto tem tarefas e tags organizadas dentro do próprio sistema, com a marca da sua clínica em tudo que é gerado.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print da lista de tarefas atribuídas por pessoa.</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Equipe alinhada, sem depender de recado perdido. Testa grátis.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Tarefa combinada é tarefa registrada. ✅</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#24</span><span class="pill-video">Vídeo</span><span class="post-pillar">IA clínica</span></div>
+          <h4 class="post-hook">"Escrever a mesma prescrição pela centésima vez?"</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima, tom de cansaço bem-humorado.</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Tela mostrando a IA sugerindo/montando uma prescrição a partir do diagnóstico registrado. Narração: "A IA clínica do GestOdonto ajuda a montar a prescrição a partir do que já está no prontuário — você revisa, ajusta e assina."</span></div>
+          <div class="script-row"><b>CTA</b><span>"Menos repetição, mais atenção ao paciente. Link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Você continua no comando — a IA só adianta o trabalho chato. ✍️🤖</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Semana 9 -->
+    <details class="grp">
+      <summary>
+        <div class="grp-head-l"><span class="letter">S9</span><h3>Semana 9</h3></div>
+        <div class="grp-head-r"><span class="week-count">Posts #25–#27</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="grp-body">
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#25</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Onboarding</span></div>
+          <h4 class="post-hook">"Medo de trocar de sistema e travar a clínica no meio do caminho?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Trocar de sistema parece arriscado — e se a equipe não aprender rápido?</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>O onboarding guiado do GestOdonto leva sua equipe passo a passo, dentro do próprio sistema, até todo mundo estar confortável.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print da tela de onboarding com checklist de primeiros passos.</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Trocar de sistema sem trauma. Testa grátis 7 dias.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Ninguém troca de sistema sozinho — a gente guia. 🧭</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#26</span><span class="pill-video">Vídeo</span><span class="post-pillar">Importação de dados</span></div>
+          <h4 class="post-hook">"E os dados que já estão na planilha antiga? Vai perder tudo?"</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela.</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Processo de importação assistida trazendo pacientes de uma planilha para o sistema. Narração: "Na importação assistida, a gente ajuda a trazer os dados da sua planilha ou sistema antigo pro GestOdonto — sem começar do zero."</span></div>
+          <div class="script-row"><b>CTA</b><span>"Seu histórico vem junto. Link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Trocar de sistema não devia significar perder anos de histórico. 📥</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#27</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Relatórios</span></div>
+          <h4 class="post-hook">"Você sabe qual tratamento mais dá retorno pra sua clínica?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Sem relatório, a resposta é sempre "eu acho que é..." — e decisão no achismo custa caro.</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>Os relatórios avançados do GestOdonto cruzam atendimento, financeiro e profissional pra mostrar onde a clínica realmente ganha dinheiro.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print de um relatório comparando tratamentos/procedimentos.</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Decisão de verdade, com número de verdade. Testa grátis.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Achismo é caro. Relatório é de graça no plano. 📈</div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Semana 10 -->
+    <details class="grp">
+      <summary>
+        <div class="grp-head-l"><span class="letter">S10</span><h3>Semana 10</h3></div>
+        <div class="grp-head-r"><span class="week-count">Posts #28–#30</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="grp-body">
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#28</span><span class="pill-video">Vídeo</span><span class="post-pillar">Suporte</span></div>
+          <h4 class="post-hook">"Já ficou horas esperando resposta de suporte de sistema?"</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima, tom de frustração reconhecível.</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Tela de chat de suporte com resposta rápida. Narração: "No plano Clínica, o suporte é prioritário — alguém te responde de verdade, sem ficar horas no vácuo esperando solução."</span></div>
+          <div class="script-row"><b>CTA</b><span>"Suporte que resolve, não só protocola. Link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Sistema trava, hora acaba, paciente espera. Suporte rápido importa. 🆘</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#29</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Institucional</span></div>
+          <h4 class="post-hook">"O que muda na rotina do consultório com o GestOdonto?"</h4>
+          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
+          <div class="script-row"><b>Slide 2 — A dor</b><span>Menos tempo lutando com planilha e caderno, menos ansiedade no fim do mês, menos paciente reclamando de falta de retorno.</span></div>
+          <div class="script-row"><b>Slide 3 — Solução</b><span>Agenda organizada, prontuário completo, financeiro claro e WhatsApp automático — tudo puxando pro mesmo lugar: você cuidando do paciente, não da papelada.</span></div>
+          <div class="script-row"><b>Slide 4 — Tela</b><span>Print combinando 2–3 telas do sistema lado a lado (agenda + financeiro + prontuário).</span></div>
+          <div class="script-row"><b>Slide 5 — CTA</b><span>Testa 7 dias grátis e sente a diferença na sua rotina. Link na bio.</span></div>
+          <div class="post-caption"><b>Legenda:</b> Sistema bom é aquele que você nem percebe que está usando. 🦷✨</div>
+        </div>
+        <div class="post-card">
+          <div class="post-head"><span class="post-num">#30</span><span class="pill-video">Vídeo</span><span class="post-pillar">Agenda + WhatsApp</span></div>
+          <h4 class="post-hook">"Um dia normal de clínica, sem nenhuma falta."</h4>
+          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela, clima de "dia perfeito".</span></div>
+          <div class="script-row"><b>Mostra (4–20s)</b><span>Sequência rápida: notificação de lembrete de WhatsApp saindo → paciente confirmando → agenda do dia mostrando só consultas confirmadas, cadeira cheia. Narração: "Lembrete automático, confirmação registrada, agenda cheia sem esforço — isso é rotina com o GestOdonto."</span></div>
+          <div class="script-row"><b>CTA</b><span>"Quer um dia assim na sua clínica? Testa grátis, link na bio."</span></div>
+          <div class="post-caption"><b>Legenda:</b> Isso não é sorte. É sistema. 🦷📅</div>
+        </div>
+      </div>
+    </details>
   </div>
 </section>
 
