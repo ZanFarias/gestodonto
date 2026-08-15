@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GestOdonto — Painel de Posts</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%B7%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f4ee; --surface: #ffffff; --surface-2: #efeade; --ink: #16211f; --ink-soft: #45524d;
+    --ink-faint: #7c8985; --border: #ddd6c5; --accent: #0f7a6b; --accent-ink: #ffffff;
+    --accent-soft: #e2f0ec; --gold: #ad7b34; --gold-soft: #f3e6cd; --danger: #b3432f; --danger-soft: #f7e3de;
+    --shadow: 0 1px 2px rgba(30,25,10,.05), 0 10px 28px rgba(30,25,10,.07);
+    font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e1a18; --surface: #142623; --surface-2: #1b302b; --ink: #ede9e0; --ink-soft: #a7b3ae;
+      --ink-faint: #74847f; --border: #2a3e39; --accent: #3ecdb1; --accent-ink: #06231f;
+      --accent-soft: #16332d; --gold: #e3ac5c; --gold-soft: #2c2314; --danger: #e08a72; --danger-soft: #3a231d;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); line-height: 1.5; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+  h1 { font-size: 1.4rem; margin: 0 0 .3rem; }
+  .sub { color: var(--ink-faint); font-size: .88rem; margin-bottom: 2rem; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; box-shadow: var(--shadow); margin-bottom: 1.5rem; }
+  label { display: block; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-faint); margin: 1rem 0 .4rem; }
+  label:first-of-type { margin-top: 0; }
+  input[type="text"], input[type="password"], input[type="datetime-local"], textarea {
+    width: 100%; padding: .6rem .7rem; border: 1px solid var(--border); border-radius: 8px;
+    background: var(--surface-2); color: var(--ink); font-family: inherit; font-size: .92rem;
+  }
+  textarea { min-height: 90px; resize: vertical; }
+  input[type="file"] { font-size: .85rem; color: var(--ink-soft); }
+  .checks { display: flex; gap: 1.2rem; margin-top: .5rem; }
+  .checks label { display: flex; align-items: center; gap: .4rem; text-transform: none; font-weight: 500; font-size: .9rem; color: var(--ink); margin: 0; }
+  button { cursor: pointer; border: none; border-radius: 8px; padding: .65rem 1.1rem; font-family: inherit; font-weight: 700; font-size: .9rem; }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); margin-top: 1.3rem; width: 100%; }
+  .btn-primary:disabled { opacity: .55; cursor: not-allowed; }
+  .btn-danger { background: var(--danger-soft); color: var(--danger); }
+  .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--ink-soft); }
+  .msg { margin-top: 1rem; font-size: .85rem; padding: .7rem .9rem; border-radius: 8px; }
+  .msg.ok { background: var(--accent-soft); color: var(--accent); }
+  .msg.err { background: var(--danger-soft); color: var(--danger); }
+  .post-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 0; border-bottom: 1px dashed var(--border); font-size: .87rem; }
+  .post-row:last-child { border-bottom: none; }
+  .post-meta { color: var(--ink-faint); font-size: .78rem; }
+  .badge { font-size: .68rem; font-weight: 700; padding: .12rem .5rem; border-radius: 999px; }
+  .badge.ig { background: var(--accent-soft); color: var(--accent); }
+  .badge.fb { background: var(--gold-soft); color: var(--gold); }
+  .badge.err { background: var(--danger-soft); color: var(--danger); }
+  #app { display: none; }
+  #login { max-width: 360px; margin: 6rem auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="login" class="card">
+    <h1>🦷 GestOdonto</h1>
+    <div class="sub">Painel interno de posts — acesso restrito.</div>
+    <label for="pwd">Senha</label>
+    <input type="password" id="pwd" placeholder="••••••••">
+    <button class="btn-primary" id="loginBtn">Entrar</button>
+    <div id="loginMsg"></div>
+  </div>
+
+  <div id="app">
+    <h1>🦷 Painel de Posts — GestOdonto</h1>
+    <div class="sub">Agende ou publique direto no Instagram e Facebook do GestOdonto.</div>
+
+    <div class="card">
+      <label for="media">Mídia (1 imagem, 1 vídeo, ou várias imagens = carrossel)</label>
+      <input type="file" id="media" accept="image/jpeg,image/png,image/webp,video/mp4,video/quicktime" multiple>
+
+      <label for="caption">Legenda</label>
+      <textarea id="caption" placeholder="Cole aqui a legenda do post..."></textarea>
+
+      <label for="scheduleAt">Agendar para (deixe vazio para publicar agora)</label>
+      <input type="datetime-local" id="scheduleAt">
+
+      <label>Plataformas</label>
+      <div class="checks">
+        <label><input type="checkbox" id="platIg" checked> Instagram</label>
+        <label><input type="checkbox" id="platFb"> Facebook</label>
+      </div>
+
+      <button class="btn-primary" id="submitBtn">Agendar post</button>
+      <div id="submitMsg"></div>
+    </div>
+
+    <div class="card">
+      <h1 style="font-size:1.05rem;">Pendentes</h1>
+      <div id="pendingList" class="sub">Carregando...</div>
+    </div>
+
+    <div class="card">
+      <h1 style="font-size:1.05rem;">Publicados recentemente</h1>
+      <div id="historyList" class="sub">Carregando...</div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { upload } from 'https://esm.sh/@vercel/blob/client';
+
+const TOKEN_KEY = 'gestodonto_admin_token';
+const loginEl = document.getElementById('login');
+const appEl = document.getElementById('app');
+
+function getToken() { return localStorage.getItem(TOKEN_KEY); }
+function setToken(t) { localStorage.setItem(TOKEN_KEY, t); }
+function authHeaders() { return { Authorization: 'Bearer ' + getToken() }; }
+
+async function boot() {
+  if (getToken()) {
+    loginEl.style.display = 'none';
+    appEl.style.display = 'block';
+    await refreshLists();
+  } else {
+    loginEl.style.display = 'block';
+    appEl.style.display = 'none';
+  }
+}
+
+document.getElementById('loginBtn').addEventListener('click', async () => {
+  const password = document.getElementById('pwd').value;
+  const msgEl = document.getElementById('loginMsg');
+  msgEl.textContent = '';
+  try {
+    const resp = await fetch('/api/login', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password }),
+    });
+    const data = await resp.json();
+    if (!resp.ok) throw new Error(data.error || 'Falha no login.');
+    setToken(data.token);
+    await boot();
+  } catch (e) {
+    msgEl.innerHTML = `<div class="msg err">${e.message}</div>`;
+  }
+});
+
+function classifyMedia(files) {
+  const images = files.filter((f) => f.type.startsWith('image/'));
+  const videos = files.filter((f) => f.type.startsWith('video/'));
+  if (videos.length === 1 && images.length === 0) return 'video';
+  if (images.length >= 1 && videos.length === 0) return images.length > 1 ? 'carousel' : 'image';
+  return null;
+}
+
+document.getElementById('submitBtn').addEventListener('click', async () => {
+  const msgEl = document.getElementById('submitMsg');
+  const btn = document.getElementById('submitBtn');
+  msgEl.innerHTML = '';
+  const files = Array.from(document.getElementById('media').files || []);
+  const caption = document.getElementById('caption').value.trim();
+  const scheduleAtRaw = document.getElementById('scheduleAt').value;
+  const platforms = [];
+  if (document.getElementById('platIg').checked) platforms.push('ig');
+  if (document.getElementById('platFb').checked) platforms.push('fb');
+
+  if (!files.length) { msgEl.innerHTML = '<div class="msg err">Selecione ao menos 1 arquivo.</div>'; return; }
+  const mediaType = classifyMedia(files);
+  if (!mediaType) { msgEl.innerHTML = '<div class="msg err">Combinação inválida: use 1 vídeo OU 1+ imagens (carrossel), não misture.</div>'; return; }
+  if (!platforms.length) { msgEl.innerHTML = '<div class="msg err">Selecione ao menos uma plataforma.</div>'; return; }
+
+  btn.disabled = true;
+  btn.textContent = 'Enviando mídia...';
+  try {
+    const mediaUrls = [];
+    for (const file of files) {
+      const blob = await upload(`gestodonto-posts/media/${Date.now()}-${file.name}`, file, {
+        access: 'public',
+        handleUploadUrl: '/api/blob-upload',
+        clientPayload: '',
+        headers: authHeaders(),
+      });
+      mediaUrls.push(blob.url);
+    }
+
+    btn.textContent = 'Agendando...';
+    const scheduleAt = scheduleAtRaw ? new Date(scheduleAtRaw).toISOString() : null;
+    const resp = await fetch('/api/schedule-post', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', ...authHeaders() },
+      body: JSON.stringify({ mediaUrls, mediaType, caption, scheduleAt, platforms }),
+    });
+    const data = await resp.json();
+    if (!resp.ok) throw new Error(data.error || 'Falha ao agendar.');
+    msgEl.innerHTML = '<div class="msg ok">Post enviado com sucesso.</div>';
+    document.getElementById('media').value = '';
+    document.getElementById('caption').value = '';
+    document.getElementById('scheduleAt').value = '';
+    await refreshLists();
+  } catch (e) {
+    msgEl.innerHTML = `<div class="msg err">${e.message}</div>`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Agendar post';
+  }
+});
+
+function fmtDate(ts) {
+  if (!ts) return '—';
+  return new Date(ts).toLocaleString('pt-BR');
+}
+
+function renderPost(p, { cancellable }) {
+  const row = document.createElement('div');
+  row.className = 'post-row';
+  const badgeClass = p.status === 'error' ? 'err' : p.platform;
+  const captionPreview = (p.caption || '').slice(0, 60);
+  row.innerHTML = `
+    <div>
+      <span class="badge ${badgeClass}">${p.platform.toUpperCase()}</span>
+      <strong>${p.mediaType}</strong> — ${captionPreview}${p.caption && p.caption.length > 60 ? '…' : ''}
+      <div class="post-meta">${p.status === 'error' ? ('Erro: ' + (p.error || '?')) : ('Previsto: ' + fmtDate(p.scheduleAt) + (p.publishedAt ? ' · Publicado: ' + fmtDate(p.publishedAt) : ''))}</div>
+    </div>
+  `;
+  if (cancellable) {
+    const cancelBtn = document.createElement('button');
+    cancelBtn.className = 'btn-danger';
+    cancelBtn.textContent = 'Cancelar';
+    cancelBtn.addEventListener('click', async () => {
+      cancelBtn.disabled = true;
+      try {
+        await fetch('/api/cancel-post', {
+          method: 'POST', headers: { 'Content-Type': 'application/json', ...authHeaders() }, body: JSON.stringify({ id: p.id }),
+        });
+        await refreshLists();
+      } catch (e) { cancelBtn.disabled = false; }
+    });
+    row.appendChild(cancelBtn);
+  }
+  return row;
+}
+
+async function refreshLists() {
+  const pendingEl = document.getElementById('pendingList');
+  const historyEl = document.getElementById('historyList');
+  try {
+    const resp = await fetch('/api/list-scheduled', { headers: authHeaders() });
+    const data = await resp.json();
+    if (!resp.ok) throw new Error(data.error || 'Falha ao carregar.');
+
+    pendingEl.innerHTML = '';
+    if (!data.pending.length) pendingEl.textContent = 'Nenhum post pendente.';
+    else data.pending.forEach((p) => pendingEl.appendChild(renderPost(p, { cancellable: true })));
+
+    historyEl.innerHTML = '';
+    if (!data.history.length) historyEl.textContent = 'Nenhum post publicado ainda.';
+    else data.history.slice(0, 20).forEach((p) => historyEl.appendChild(renderPost(p, { cancellable: false })));
+  } catch (e) {
+    pendingEl.innerHTML = `<div class="msg err">${e.message}</div>`;
+    historyEl.innerHTML = '';
+  }
+}
+
+boot();
+</script>
+</body>
+</html>

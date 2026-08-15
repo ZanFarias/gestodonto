@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "functions": {
+    "api/schedule-post.js": { "maxDuration": 60 },
+    "api/cron-publish.js": { "maxDuration": 60 }
+  },
+  "routes": [
+    { "src": "/api/login", "dest": "/api/login.js" },
+    { "src": "/api/blob-upload", "dest": "/api/blob-upload.js" },
+    { "src": "/api/schedule-post", "dest": "/api/schedule-post.js" },
+    { "src": "/api/list-scheduled", "dest": "/api/list-scheduled.js" },
+    { "src": "/api/cancel-post", "dest": "/api/cancel-post.js" },
+    { "src": "/api/cron-publish", "dest": "/api/cron-publish.js" },
+    { "src": "/admin", "dest": "/admin/index.html" },
+    { "src": "/admin/", "dest": "/admin/index.html" },
+    { "src": "/(.*\\.(png|jpg|jpeg|gif|svg|ico|webp|css|js|woff2?|ttf))", "dest": "/$1" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

@@ -1,0 +1,16 @@
+name: Publicar posts agendados (GestOdonto)
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  cron-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chamar /api/cron-publish
+        run: |
+          curl -sS -X POST "https://gestodonto.vercel.app/api/cron-publish" \
+            -H "x-cron-secret: ${{ secrets.CRON_SECRET }}" \
+            --fail-with-body
