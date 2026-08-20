@@ -8,6 +8,7 @@
   },
   "routes": [
     { "src": "/api/login", "dest": "/api/login.js" },
+    { "src": "/api/checklist", "dest": "/api/checklist.js" },
     { "src": "/api/blob-upload", "dest": "/api/blob-upload.js" },
     { "src": "/api/schedule-post", "dest": "/api/schedule-post.js" },
     { "src": "/api/list-scheduled", "dest": "/api/list-scheduled.js" },

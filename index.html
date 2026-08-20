@@ -484,7 +484,7 @@
       </div>
     </details>
 
-    <p class="checklist-note">O progresso é salvo no armazenamento local deste navegador — se você e os sócios acessarem de dispositivos diferentes, cada um verá seu próprio estado de checagem. Avise se quiser que o progresso fique sincronizado entre todos automaticamente.</p>
+    <p class="checklist-note">O progresso é compartilhado: quando qualquer sócio marca ou desmarca um item, fica salvo pra quem visualizar de qualquer dispositivo.</p>
   </div>
 </section>
 
@@ -1370,7 +1370,9 @@
 <script>
 (function () {
   var boxes = Array.prototype.slice.call(document.querySelectorAll('.checklist input[type="checkbox"]'));
-  var STORAGE_PREFIX = 'gestodonto-checklist-';
+  var API = '/api/checklist';
+  var POLL_MS = 15000;
+  var pending = {}; // ids com POST em andamento — não deixa o polling sobrescrever o clique
 
   function updateProgress() {
     var groups = {};
@@ -1396,18 +1398,48 @@
     if (label) label.textContent = totalDone + '/' + total + ' concluído (' + pct + '%)';
   }
 
+  function applyState(state) {
+    boxes.forEach(function (b) {
+      if (pending[b.id]) return;
+      var val = !!state[b.id];
+      if (b.checked !== val) b.checked = val;
+    });
+    updateProgress();
+  }
+
+  function loadState() {
+    fetch(API, { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .then(applyState)
+      .catch(function () {});
+  }
+
   boxes.forEach(function (b) {
-    var key = STORAGE_PREFIX + b.id;
-    try {
-      if (localStorage.getItem(key) === '1') b.checked = true;
-    } catch (e) {}
     b.addEventListener('change', function () {
-      try { localStorage.setItem(key, b.checked ? '1' : '0'); } catch (e) {}
+      var checked = b.checked;
+      pending[b.id] = true;
       updateProgress();
+      fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: b.id, checked: checked })
+      })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (state) {
+          delete pending[b.id];
+          if (state) applyState(state);
+        })
+        .catch(function () {
+          delete pending[b.id];
+          b.checked = !checked;
+          updateProgress();
+        });
     });
   });
 
   updateProgress();
+  loadState();
+  setInterval(loadState, POLL_MS);
 })();
 </script>
 </body>
