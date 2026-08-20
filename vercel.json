@@ -4,11 +4,13 @@
   "outputDirectory": ".",
   "functions": {
     "api/schedule-post.js": { "maxDuration": 60 },
-    "api/cron-publish.js": { "maxDuration": 60 }
+    "api/cron-publish.js": { "maxDuration": 60 },
+    "api/strategic-content.js": { "includeFiles": "api/_strategic-content.html" }
   },
   "routes": [
     { "src": "/api/login", "dest": "/api/login.js" },
     { "src": "/api/checklist", "dest": "/api/checklist.js" },
+    { "src": "/api/strategic-content", "dest": "/api/strategic-content.js" },
     { "src": "/api/blob-upload", "dest": "/api/blob-upload.js" },
     { "src": "/api/schedule-post", "dest": "/api/schedule-post.js" },
     { "src": "/api/list-scheduled", "dest": "/api/list-scheduled.js" },

@@ -317,1129 +317,167 @@
   footer { padding: 2.6rem 0 4rem; border-top: 1px solid var(--border); }
   footer p { color: var(--ink-faint); font-size: .82rem; max-width: 60ch; }
   footer .conf { color: var(--gold); font-weight: 700; }
+
+  /* ---------- Login (acesso restrito) ---------- */
+  .login-wrap { max-width: 360px; margin: 6rem auto; padding: 0 1.5rem; }
+  .login-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.6rem; box-shadow: var(--shadow); }
+  .login-card h1 { font-size: 1.3rem; margin: 0 0 .3rem; }
+  .login-card .sub { color: var(--ink-faint); font-size: .85rem; margin-bottom: 1.4rem; }
+  .login-card label { display: block; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-faint); margin-bottom: .4rem; }
+  .login-card input[type="password"] { width: 100%; padding: .65rem .7rem; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-2); color: var(--ink); font-family: inherit; font-size: .95rem; }
+  .login-card button { cursor: pointer; border: none; border-radius: 8px; padding: .7rem 1.1rem; font-family: inherit; font-weight: 700; font-size: .9rem; background: var(--accent); color: var(--accent-ink); margin-top: 1.1rem; width: 100%; }
+  .login-card .msg { margin-top: 1rem; font-size: .85rem; padding: .65rem .85rem; border-radius: 8px; background: #f7e3de; color: #b3432f; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .login-card .msg { background: #3a231d; color: #e08a72; } }
+  :root[data-theme="dark"] .login-card .msg { background: #3a231d; color: #e08a72; }
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <div class="brand">🦷 GestOdonto <span class="tag">mapa interno</span></div>
-    <div class="nav-links">
-      <a href="#proposito">Propósito</a>
-      <a href="#checklist">Checklist inicial</a>
-      <a href="#organograma">Organograma</a>
-      <a href="#departamentos">Departamentos</a>
-      <a href="#roadmap">Roadmap 5 anos</a>
-      <a href="#marketing">Marketing</a>
-    </div>
+<div class="login-wrap">
+  <div id="login" class="login-card">
+    <h1>🦷 GestOdonto</h1>
+    <div class="sub">Mapa estratégico interno — acesso restrito aos sócios.</div>
+    <label for="pwd">Senha</label>
+    <input type="password" id="pwd" placeholder="••••••••">
+    <button id="loginBtn">Entrar</button>
+    <div id="loginMsg"></div>
   </div>
-</nav>
+</div>
 
-<header class="hero wrap" id="proposito">
-  <div class="eyebrow">Mapa estratégico · uso interno · sócios</div>
-  <h1>GestOdonto</h1>
-  <p class="sub">Estrutura completa da empresa — departamentos, cargos, rotinas e o plano de crescimento para os próximos 5 anos. Um documento vivo: a ideia é que qualquer sócio ou primeira contratação entenda, em uma leitura, o que existe hoje e para onde caminhamos.</p>
-
-  <div class="notice">
-    <b>Como ler este documento:</b> os números do roadmap (Ano 1 a Ano 5) são uma <b>projeção-benchmark</b> de mercado para SaaS B2B odontológico no Brasil, não uma meta fechada entre os sócios — sirva-se deles como ponto de partida para calibrar as metas reais. A estrutura de cargos assume dois fundadores (um em Produto/Tecnologia, outro cobrindo Comercial/Marketing/CS/Financeiro/Jurídico/Gente até a primeira leva de contratações) — ajuste se o time fundador for diferente.
-  </div>
-
-  <div class="pvvp-grid">
-    <div class="pvvp-card">
-      <h3>Propósito</h3>
-      <p>Tirar a gestão do caminho entre o dentista e o paciente — para que tempo de consultório vire tempo de cadeira, não tempo de planilha.</p>
-    </div>
-    <div class="pvvp-card">
-      <h3>Missão</h3>
-      <p>Simplificar a gestão de clínicas e consultórios odontológicos com um software que qualquer equipe opera sem treinamento longo, aumentando a eficiência e a lucratividade de cada cliente.</p>
-    </div>
-    <div class="pvvp-card">
-      <h3>Visão</h3>
-      <p>Até o Ano 5, ser a opção padrão de gestão para clínicas e consultórios odontológicos independentes no Brasil — o sistema que se recomenda de dentista para dentista.</p>
-    </div>
-    <div class="pvvp-card">
-      <h3>Valores</h3>
-      <div class="values-list">
-        <div class="value-row"><span class="n">01</span><div><b>Simplicidade é feature.</b> <span class="d">Se exige treinamento longo, o produto falhou.</span></div></div>
-        <div class="value-row"><span class="n">02</span><div><b>Dado antes de opinião.</b> <span class="d">Decisão de squad, campanha ou contratação passa por número.</span></div></div>
-        <div class="value-row"><span class="n">03</span><div><b>Cliente lucrando é o único KPI que importa de verdade.</b> <span class="d">Toda métrica interna existe para servir esse resultado.</span></div></div>
-        <div class="value-row"><span class="n">04</span><div><b>Execução rápida vence plano perfeito.</b> <span class="d">Errar rápido e corrigir é mais barato que esperar certeza.</span></div></div>
-        <div class="value-row"><span class="n">05</span><div><b>Ownership sem silo.</b> <span class="d">Cada pessoa é dona de um resultado, não de uma tarefa.</span></div></div>
-        <div class="value-row"><span class="n">06</span><div><b>Transparência radical.</b> <span class="d">Caixa, churn e metas são visíveis internamente, não guardados na diretoria.</span></div></div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<section id="checklist">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Etapa 0</div>
-      <h2>Checklist inicial — do nome ao primeiro cliente</h2>
-      <p>Tudo que precisa existir formalmente antes (ou junto) do primeiro cliente pagante: nome, marca, domínio, sociedade, CNPJ, conta bancária e compliance. Marque o que já está pronto — o progresso fica salvo neste navegador.</p>
-    </div>
-
-    <div class="overall-progress">
-      <div class="row">
-        <span class="label">Progresso geral</span>
-        <span class="pct" id="overall-label">0/34 concluído (0%)</span>
-      </div>
-      <div class="bar-track"><div class="bar-fill" id="overall-bar"></div></div>
-    </div>
-
-    <details class="grp checklist" open>
-      <summary>
-        <div class="grp-head-l"><span class="letter">A</span><h3>Nome &amp; Marca</h3></div>
-        <div class="grp-head-r"><span class="grp-count" data-group-progress="nome">0/5</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="chk-item"><input type="checkbox" id="chk-1" data-group="nome"><label for="chk-1">Nome da empresa definido e validado entre os sócios</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-2" data-group="nome"><label for="chk-2">Busca de disponibilidade do nome empresarial na Junta Comercial</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-3" data-group="nome"><label for="chk-3">Busca de anterioridade de marca no INPI (busca.inpi.gov.br)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-4" data-group="nome"><label for="chk-4">Registro da marca no INPI (classe de software/SaaS + classe de serviços de saúde, se aplicável)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-5" data-group="nome"><label for="chk-5">Identidade visual definida (logo, paleta, tipografia)</label></div>
-      </div>
-    </details>
-
-    <details class="grp checklist">
-      <summary>
-        <div class="grp-head-l"><span class="letter">B</span><h3>Domínio &amp; Presença Digital</h3></div>
-        <div class="grp-head-r"><span class="grp-count" data-group-progress="digital">0/5</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="chk-item"><input type="checkbox" id="chk-6" data-group="digital"><label for="chk-6">Domínio .com.br registrado (registro.br)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-7" data-group="digital"><label for="chk-7">Domínio .com registrado (proteção de marca, opcional)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-8" data-group="digital"><label for="chk-8">E-mail profissional configurado (Google Workspace ou Microsoft 365)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-9" data-group="digital"><label for="chk-9">Perfis reservados nas redes sociais com o mesmo @ (Instagram, LinkedIn etc.)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-10" data-group="digital"><label for="chk-10">Site/hospedagem no ar</label></div>
-      </div>
-    </details>
-
-    <details class="grp checklist">
-      <summary>
-        <div class="grp-head-l"><span class="letter">C</span><h3>Jurídico &amp; Societário</h3></div>
-        <div class="grp-head-r"><span class="grp-count" data-group-progress="juridico">0/8</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="chk-item"><input type="checkbox" id="chk-11" data-group="juridico"><label for="chk-11">Tipo societário definido (Sociedade Limitada, MEI etc.)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-12" data-group="juridico"><label for="chk-12">Contrato Social redigido (sócios, % de participação, pró-labore, cláusulas de saída/vesting)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-13" data-group="juridico"><label for="chk-13">CNAE definido (desenvolvimento/licenciamento de programas de computador)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-14" data-group="juridico"><label for="chk-14">Enquadramento tributário definido (Simples Nacional / Lucro Presumido)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-15" data-group="juridico"><label for="chk-15">Registro na Junta Comercial</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-16" data-group="juridico"><label for="chk-16">CNPJ emitido na Receita Federal</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-17" data-group="juridico"><label for="chk-17">Inscrição Municipal (necessária para emitir nota fiscal de serviço)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-18" data-group="juridico"><label for="chk-18">Alvará de funcionamento verificado (checar se exigido para operação 100% remota)</label></div>
-      </div>
-    </details>
-
-    <details class="grp checklist">
-      <summary>
-        <div class="grp-head-l"><span class="letter">D</span><h3>Financeiro &amp; Bancário</h3></div>
-        <div class="grp-head-r"><span class="grp-count" data-group-progress="financeiro">0/5</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="chk-item"><input type="checkbox" id="chk-19" data-group="financeiro"><label for="chk-19">Contador contratado</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-20" data-group="financeiro"><label for="chk-20">Conta bancária PJ aberta</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-21" data-group="financeiro"><label for="chk-21">Gateway de cobrança recorrente contratado (Stripe, Iugu, Vindi, Asaas)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-22" data-group="financeiro"><label for="chk-22">Pró-labore dos sócios definido</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-23" data-group="financeiro"><label for="chk-23">Emissão de nota fiscal configurada</label></div>
-      </div>
-    </details>
-
-    <details class="grp checklist">
-      <summary>
-        <div class="grp-head-l"><span class="letter">E</span><h3>Compliance &amp; Dados (LGPD)</h3></div>
-        <div class="grp-head-r"><span class="grp-count" data-group-progress="lgpd">0/5</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="chk-item"><input type="checkbox" id="chk-24" data-group="lgpd"><label for="chk-24">Política de Privacidade redigida</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-25" data-group="lgpd"><label for="chk-25">Termos de Uso redigidos</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-26" data-group="lgpd"><label for="chk-26">DPO / Encarregado de dados nomeado (pode ser um sócio no início)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-27" data-group="lgpd"><label for="chk-27">Mapeamento dos dados pessoais/sensíveis tratados pelo sistema</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-28" data-group="lgpd"><label for="chk-28">Contrato de Processamento de Dados (DPA) padrão para clientes</label></div>
-      </div>
-    </details>
-
-    <details class="grp checklist">
-      <summary>
-        <div class="grp-head-l"><span class="letter">F</span><h3>Produto &amp; Suporte</h3></div>
-        <div class="grp-head-r"><span class="grp-count" data-group-progress="produto">0/3</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="chk-item"><input type="checkbox" id="chk-29" data-group="produto"><label for="chk-29">Produto em produção</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-30" data-group="produto"><label for="chk-30">Canal de suporte definido (WhatsApp, e-mail ou chat)</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-31" data-group="produto"><label for="chk-31">Central de ajuda/documentação básica publicada</label></div>
-      </div>
-    </details>
-
-    <details class="grp checklist">
-      <summary>
-        <div class="grp-head-l"><span class="letter">G</span><h3>Comercial (pré-lançamento)</h3></div>
-        <div class="grp-head-r"><span class="grp-count" data-group-progress="comercial">0/3</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="chk-item"><input type="checkbox" id="chk-32" data-group="comercial"><label for="chk-32">Plano(s) e precificação definidos</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-33" data-group="comercial"><label for="chk-33">Página de vendas/institucional no ar</label></div>
-        <div class="chk-item"><input type="checkbox" id="chk-34" data-group="comercial"><label for="chk-34">CRM configurado para o primeiro cliente</label></div>
-      </div>
-    </details>
-
-    <p class="checklist-note">O progresso é compartilhado: quando qualquer sócio marca ou desmarca um item, fica salvo pra quem visualizar de qualquer dispositivo.</p>
-  </div>
-</section>
-
-<section id="organograma">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Estrutura</div>
-      <h2>Organograma por fase de crescimento</h2>
-      <p>A empresa não nasce com 8 departamentos cheios — nasce com dois fundadores cobrindo tudo. O organograma abaixo mostra a hierarquia-alvo e, em cada função, <b>quando</b> ela deixa de ser coberta por um fundador e ganha liderança própria.</p>
-    </div>
-
-    <div class="legend">
-      <div class="item"><span class="pill pill-f1">F1</span> liderança própria desde o início (fundador)</div>
-      <div class="item"><span class="pill pill-f2">F2</span> primeira contratação dedicada — Ano 1–2</div>
-      <div class="item"><span class="pill pill-f3">F3</span> head formal na maturidade — Ano 3–5</div>
-    </div>
-
-    <figure class="chart">
-      <svg viewBox="0 0 1160 470" role="img" aria-label="Organograma: Diretoria Executiva no topo, com sete departamentos abaixo — Produto e Tecnologia, Comercial, Marketing e Growth, Customer Success e Suporte, Financeiro, Jurídico e Compliance, Gente e Cultura — cada um com um selo indicando em que fase ganha liderança dedicada.">
-        <defs>
-          <marker id="arrow" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="6" markerHeight="6" orient="auto">
-            <path d="M0,0 L8,4 L0,8 z" fill="currentColor" style="color:var(--ink-faint)"></path>
-          </marker>
-        </defs>
-
-        <!-- Root -->
-        <g class="org-box root">
-          <rect x="440" y="14" width="280" height="66" rx="10"></rect>
-          <text class="t1" x="580" y="42" text-anchor="middle" font-size="15">Diretoria Executiva</text>
-          <text class="t2" x="580" y="62" text-anchor="middle" font-size="11.5">Fundadores — CEO + CTO</text>
-        </g>
-
-        <!-- trunk -->
-        <line class="org-line" x1="580" y1="80" x2="580" y2="112" />
-        <line class="org-line" x1="123" y1="112" x2="1037" y2="112" />
-
-        <!-- 7 branch drops (x centers) -->
-        <line class="org-line" x1="123" y1="112" x2="123" y2="146" />
-        <line class="org-line" x1="285" y1="112" x2="285" y2="146" />
-        <line class="org-line" x1="447" y1="112" x2="447" y2="146" />
-        <line class="org-line" x1="609" y1="112" x2="609" y2="146" />
-        <line class="org-line" x1="771" y1="112" x2="771" y2="146" />
-        <line class="org-line" x1="933" y1="112" x2="933" y2="146" />
-        <line class="org-line" x1="1037" y1="112" x2="1037" y2="146" />
-
-        <!-- Boxes row: width 148, height 108, y=146 -->
-        <!-- Produto & Tecnologia -->
-        <g class="org-box">
-          <rect x="49" y="146" width="148" height="112" rx="9"></rect>
-          <text class="t1" x="123" y="172" text-anchor="middle" font-size="12.5">Produto &amp;</text>
-          <text class="t1" x="123" y="188" text-anchor="middle" font-size="12.5">Tecnologia</text>
-          <text class="t2" x="123" y="207" text-anchor="middle" font-size="10.5">CTO (fundador)</text>
-          <rect class="org-pill-bg" x="98" y="222" width="50" height="20" rx="10"></rect>
-        </g>
-        <text x="123" y="236" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--accent)">F1</text>
-
-        <!-- Comercial -->
-        <g class="org-box">
-          <rect x="211" y="146" width="148" height="112" rx="9"></rect>
-          <text class="t1" x="285" y="180" text-anchor="middle" font-size="12.5">Comercial</text>
-          <text class="t2" x="285" y="199" text-anchor="middle" font-size="10.5">CEO acumula (F1)</text>
-          <rect class="org-pill-bg" x="260" y="222" width="50" height="20" rx="10"></rect>
-        </g>
-        <text x="285" y="236" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--gold)">F2</text>
-
-        <!-- Marketing & Growth -->
-        <g class="org-box">
-          <rect x="373" y="146" width="148" height="112" rx="9"></rect>
-          <text class="t1" x="447" y="172" text-anchor="middle" font-size="12.5">Marketing &amp;</text>
-          <text class="t1" x="447" y="188" text-anchor="middle" font-size="12.5">Growth</text>
-          <text class="t2" x="447" y="207" text-anchor="middle" font-size="10.5">CEO acumula (F1)</text>
-          <rect class="org-pill-bg" x="422" y="222" width="50" height="20" rx="10"></rect>
-        </g>
-        <text x="447" y="236" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--gold)">F2</text>
-
-        <!-- CS & Suporte -->
-        <g class="org-box">
-          <rect x="535" y="146" width="148" height="112" rx="9"></rect>
-          <text class="t1" x="609" y="172" text-anchor="middle" font-size="12.5">Customer Success</text>
-          <text class="t1" x="609" y="188" text-anchor="middle" font-size="12.5">&amp; Suporte</text>
-          <text class="t2" x="609" y="207" text-anchor="middle" font-size="10.5">CEO acumula (F1)</text>
-          <rect class="org-pill-bg" x="584" y="222" width="50" height="20" rx="10"></rect>
-        </g>
-        <text x="609" y="236" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--gold)">F2</text>
-
-        <!-- Financeiro -->
-        <g class="org-box">
-          <rect x="697" y="146" width="148" height="112" rx="9"></rect>
-          <text class="t1" x="771" y="180" text-anchor="middle" font-size="12.5">Financeiro</text>
-          <text class="t2" x="771" y="199" text-anchor="middle" font-size="10.5">CEO + contador (F1)</text>
-          <rect class="org-pill-bg" x="746" y="222" width="50" height="20" rx="10"></rect>
-        </g>
-        <text x="771" y="236" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--gold)">F2</text>
-
-        <!-- Jurídico & Compliance -->
-        <g class="org-box">
-          <rect x="859" y="146" width="148" height="112" rx="9"></rect>
-          <text class="t1" x="933" y="172" text-anchor="middle" font-size="12.5">Jurídico &amp;</text>
-          <text class="t1" x="933" y="188" text-anchor="middle" font-size="12.5">Compliance</text>
-          <text class="t2" x="933" y="207" text-anchor="middle" font-size="10.5">Assessoria terceir. (F1)</text>
-          <rect class="org-pill-bg" x="908" y="222" width="50" height="20" rx="10"></rect>
-        </g>
-        <text x="933" y="236" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--ink-faint)">F3</text>
-
-        <!-- Gente & Cultura -->
-        <g class="org-box">
-          <rect x="963" y="146" width="148" height="112" rx="9"></rect>
-          <text class="t1" x="1037" y="180" text-anchor="middle" font-size="12.5">Gente &amp; Cultura</text>
-          <text class="t2" x="1037" y="199" text-anchor="middle" font-size="10.5">CEO acumula (F1)</text>
-          <rect class="org-pill-bg" x="1012" y="222" width="50" height="20" rx="10"></rect>
-        </g>
-        <text x="1037" y="236" text-anchor="middle" font-size="10.5" font-weight="700" fill="var(--ink-faint)">F3</text>
-
-        <!-- second row: dedicated hire note strip -->
-        <line class="org-line" x1="123" y1="258" x2="123" y2="278"></line>
-        <line class="org-line" x1="285" y1="258" x2="285" y2="278"></line>
-        <line class="org-line" x1="447" y1="258" x2="447" y2="278"></line>
-        <line class="org-line" x1="609" y1="258" x2="609" y2="278"></line>
-        <line class="org-line" x1="771" y1="258" x2="771" y2="278"></line>
-        <line class="org-line" x1="933" y1="258" x2="933" y2="278"></line>
-        <line class="org-line" x1="1037" y1="258" x2="1037" y2="278"></line>
-
-        <g>
-          <rect x="49" y="278" width="148" height="60" rx="8" fill="var(--surface-2)" stroke="var(--border)"></rect>
-          <text x="123" y="300" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">1ª contratação:</text>
-          <text x="123" y="316" text-anchor="middle" font-size="10.5" fill="var(--ink)" font-weight="600">Dev Fullstack</text>
-          <text x="123" y="330" text-anchor="middle" font-size="9.5" fill="var(--ink-faint)">(F2)</text>
-        </g>
-        <g>
-          <rect x="211" y="278" width="148" height="60" rx="8" fill="var(--surface-2)" stroke="var(--border)"></rect>
-          <text x="285" y="300" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">1ª contratação:</text>
-          <text x="285" y="316" text-anchor="middle" font-size="10.5" fill="var(--ink)" font-weight="600">SDR / Closer</text>
-          <text x="285" y="330" text-anchor="middle" font-size="9.5" fill="var(--ink-faint)">(F2)</text>
-        </g>
-        <g>
-          <rect x="373" y="278" width="148" height="60" rx="8" fill="var(--surface-2)" stroke="var(--border)"></rect>
-          <text x="447" y="300" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">1ª contratação:</text>
-          <text x="447" y="316" text-anchor="middle" font-size="10.5" fill="var(--ink)" font-weight="600">Performance Ads</text>
-          <text x="447" y="330" text-anchor="middle" font-size="9.5" fill="var(--ink-faint)">(F2)</text>
-        </g>
-        <g>
-          <rect x="535" y="278" width="148" height="60" rx="8" fill="var(--surface-2)" stroke="var(--border)"></rect>
-          <text x="609" y="300" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">1ª contratação da empresa:</text>
-          <text x="609" y="316" text-anchor="middle" font-size="10.5" fill="var(--ink)" font-weight="600">Onboarding/Suporte</text>
-          <text x="609" y="330" text-anchor="middle" font-size="9.5" fill="var(--ink-faint)">(F2)</text>
-        </g>
-        <g>
-          <rect x="697" y="278" width="148" height="60" rx="8" fill="var(--surface-2)" stroke="var(--border)"></rect>
-          <text x="771" y="300" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">1ª contratação:</text>
-          <text x="771" y="316" text-anchor="middle" font-size="10.5" fill="var(--ink)" font-weight="600">Analista Financeiro</text>
-          <text x="771" y="330" text-anchor="middle" font-size="9.5" fill="var(--ink-faint)">(F2)</text>
-        </g>
-        <g>
-          <rect x="859" y="278" width="148" height="60" rx="8" fill="var(--surface-2)" stroke="var(--border)"></rect>
-          <text x="933" y="300" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">Segue terceirizado</text>
-          <text x="933" y="316" text-anchor="middle" font-size="10.5" fill="var(--ink)" font-weight="600">até maior volume</text>
-          <text x="933" y="330" text-anchor="middle" font-size="9.5" fill="var(--ink-faint)">(F3)</text>
-        </g>
-        <g>
-          <rect x="963" y="278" width="148" height="60" rx="8" fill="var(--surface-2)" stroke="var(--border)"></rect>
-          <text x="1037" y="300" text-anchor="middle" font-size="10.5" fill="var(--ink-soft)">1ª contratação:</text>
-          <text x="1037" y="316" text-anchor="middle" font-size="10.5" fill="var(--ink)" font-weight="600">Generalista RH</text>
-          <text x="1037" y="330" text-anchor="middle" font-size="9.5" fill="var(--ink-faint)">(F3, ~15+ pessoas)</text>
-        </g>
-
-        <text x="580" y="400" text-anchor="middle" font-size="11" fill="var(--ink-faint)">Detalhe de cargos individuais, funções e rotinas de cada departamento na seção abaixo ↓</text>
-      </svg>
-      <figcaption>A Diretoria Executiva (os fundadores) cobre todas as sete frentes na Fase 1. A linha pontilhada de cada caixa mostra qual é a primeira contratação dedicada daquela área e em que fase ela normalmente acontece — Produto &amp; Tecnologia já nasce com liderança própria (o CTO), enquanto Jurídico e Gente só ganham estrutura própria perto da maturidade.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section id="departamentos">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Atribuições</div>
-      <h2>Os 8 departamentos — cargos e rotinas</h2>
-      <p>Para cada departamento: os cargos (com a fase em que normalmente entram) e as rotinas/processos que mantêm a área funcionando sem depender de heroísmo individual. Clique para expandir.</p>
-    </div>
-
-    <div class="legend" style="margin-bottom:1.6rem;">
-      <div class="item"><span class="pill pill-f1">F1</span> hoje / fundador</div>
-      <div class="item"><span class="pill pill-f2">F2</span> Ano 1–2</div>
-      <div class="item"><span class="pill pill-f3">F3</span> Ano 3–5</div>
-    </div>
-
-    <!-- 1 Diretoria -->
-    <details class="dept" open>
-      <summary>
-        <div class="dept-head-l"><span class="num">01</span><h3>Diretoria Executiva</h3></div>
-        <div class="dept-head-r"><span class="pill pill-f1">F1</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="dept-body">
-        <div class="dept-cols">
-          <div>
-            <div class="colhead">Cargos</div>
-            <div class="role"><span class="name">CEO / Fundador(a)</span><span class="pill pill-f1">F1</span><span class="fn">Visão de longo prazo, captação de parceiros/investidores, decisão final em impasses, cultura da empresa. Acumula Comercial, Marketing, CS, Financeiro, Jurídico e Gente até as primeiras contratações.</span></div>
-            <div class="role"><span class="name">CTO / Fundador(a)</span><span class="pill pill-f1">F1</span><span class="fn">Arquitetura do produto, decisões técnicas de longo prazo, liderança do time de tecnologia desde o primeiro dia.</span></div>
-            <div class="role"><span class="name">COO</span><span class="pill pill-f3">F3</span><span class="fn">Dono da execução do dia a dia entre departamentos — entra quando a diretoria não tem mais banda para operação e estratégia ao mesmo tempo.</span></div>
-          </div>
-          <div>
-            <div class="colhead">Rotinas &amp; processos</div>
-            <div class="routine"><span class="cad">Semanal</span><span class="txt">Reunião de diretoria — KPIs da semana e bloqueios entre áreas.</span></div>
-            <div class="routine"><span class="cad">Mensal</span><span class="txt">Fechamento de resultados: MRR, churn, caixa.</span></div>
-            <div class="routine"><span class="cad">Trimestral</span><span class="txt">Definição e revisão de OKRs.</span></div>
-            <div class="routine"><span class="cad">Anual</span><span class="txt">Revisão do roadmap estratégico de 5 anos (esta página).</span></div>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <!-- 2 Produto -->
-    <details class="dept">
-      <summary>
-        <div class="dept-head-l"><span class="num">02</span><h3>Produto &amp; Tecnologia</h3></div>
-        <div class="dept-head-r"><span class="pill pill-f1">F1</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="dept-body">
-        <div class="dept-cols">
-          <div>
-            <div class="colhead">Cargos</div>
-            <div class="role"><span class="name">CTO (fundador)</span><span class="pill pill-f1">F1</span><span class="fn">Stack, arquitetura, prioridade técnica de longo prazo.</span></div>
-            <div class="role"><span class="name">Desenvolvedor(a) Fullstack</span><span class="pill pill-f2">F2</span><span class="fn">Geralmente a primeira contratação técnica — mantém e evolui o produto no dia a dia.</span></div>
-            <div class="role"><span class="name">Suporte Técnico N2/N3</span><span class="pill pill-f2">F2</span><span class="fn">Resolve bugs escalados pelo Suporte N1 do time de CS.</span></div>
-            <div class="role"><span class="name">Product Manager</span><span class="pill pill-f3">F3</span><span class="fn">Dono do backlog e do discovery contínuo com clientes.</span></div>
-            <div class="role"><span class="name">Analista de QA</span><span class="pill pill-f3">F3</span><span class="fn">Garante qualidade antes de cada release.</span></div>
-            <div class="role"><span class="name">DevOps / Infra</span><span class="pill pill-f3">F3</span><span class="fn">Disponibilidade, segurança e escalabilidade — pode começar terceirizado.</span></div>
-          </div>
-          <div>
-            <div class="colhead">Rotinas &amp; processos</div>
-            <div class="routine"><span class="cad">Diário</span><span class="txt">Standup do time técnico.</span></div>
-            <div class="routine"><span class="cad">Quinzenal</span><span class="txt">Sprint planning + review/retrospectiva.</span></div>
-            <div class="routine"><span class="cad">Mensal</span><span class="txt">Changelog público para clientes.</span></div>
-            <div class="routine"><span class="cad">Contínuo</span><span class="txt">Monitoramento de uptime e SLA.</span></div>
-            <div class="routine"><span class="cad">Trimestral</span><span class="txt">Revisão do roadmap técnico.</span></div>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <!-- 3 Comercial -->
-    <details class="dept">
-      <summary>
-        <div class="dept-head-l"><span class="num">03</span><h3>Comercial (Vendas)</h3></div>
-        <div class="dept-head-r"><span class="pill pill-f2">F2</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="dept-body">
-        <div class="dept-cols">
-          <div>
-            <div class="colhead">Cargos</div>
-            <div class="role"><span class="name">CEO (acumula)</span><span class="pill pill-f1">F1</span><span class="fn">Fecha os primeiros clientes manualmente, valida discurso comercial e objeções reais.</span></div>
-            <div class="role"><span class="name">SDR</span><span class="pill pill-f2">F2</span><span class="fn">Prospecção e qualificação de leads antes da demo.</span></div>
-            <div class="role"><span class="name">Closer / Account Executive</span><span class="pill pill-f2">F2</span><span class="fn">Demonstração do produto e fechamento.</span></div>
-            <div class="role"><span class="name">Gerente de Parcerias</span><span class="pill pill-f3">F3</span><span class="fn">Acordos com associações odontológicas, faculdades de odonto e distribuidores de insumos.</span></div>
-            <div class="role"><span class="name">Head Comercial</span><span class="pill pill-f3">F3</span><span class="fn">Estratégia de vendas, metas e comissionamento do time.</span></div>
-          </div>
-          <div>
-            <div class="colhead">Rotinas &amp; processos</div>
-            <div class="routine"><span class="cad">Diário</span><span class="txt">Atualização do CRM.</span></div>
-            <div class="routine"><span class="cad">Semanal</span><span class="txt">Revisão de pipeline e forecast.</span></div>
-            <div class="routine"><span class="cad">Mensal</span><span class="txt">Conversão por etapa do funil (MQL → SQL → cliente).</span></div>
-            <div class="routine"><span class="cad">Trimestral</span><span class="txt">Revisão de metas e comissionamento.</span></div>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <!-- 4 Marketing -->
-    <details class="dept">
-      <summary>
-        <div class="dept-head-l"><span class="num">04</span><h3>Marketing &amp; Growth</h3></div>
-        <div class="dept-head-r"><span class="pill pill-f2">F2</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="dept-body">
-        <div class="dept-cols">
-          <div>
-            <div class="colhead">Cargos</div>
-            <div class="role"><span class="name">CEO (acumula)</span><span class="pill pill-f1">F1</span><span class="fn">Marketing e presença digital enquanto não há contratação dedicada.</span></div>
-            <div class="role"><span class="name">Especialista em Performance/Ads</span><span class="pill pill-f2">F2</span><span class="fn">Meta Ads e Google Ads voltados à geração de leads.</span></div>
-            <div class="role"><span class="name">Analista de Conteúdo/SEO</span><span class="pill pill-f3">F3</span><span class="fn">Presença orgânica e autoridade de marca no nicho odontológico.</span></div>
-            <div class="role"><span class="name">Head de Marketing</span><span class="pill pill-f3">F3</span><span class="fn">Estratégia de aquisição multicanal e alocação de budget.</span></div>
-          </div>
-          <div>
-            <div class="colhead">Rotinas &amp; processos</div>
-            <div class="routine"><span class="cad">Semanal</span><span class="txt">Revisão de campanhas ativas — CAC e CPL.</span></div>
-            <div class="routine"><span class="cad">Mensal</span><span class="txt">Relatório de performance + calendário do mês seguinte.</span></div>
-            <div class="routine"><span class="cad">Trimestral</span><span class="txt">Teste de um novo canal ou formato.</span></div>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <!-- 5 CS -->
-    <details class="dept">
-      <summary>
-        <div class="dept-head-l"><span class="num">05</span><h3>Customer Success &amp; Suporte</h3></div>
-        <div class="dept-head-r"><span class="pill pill-f2">F2</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="dept-body">
-        <div class="dept-cols">
-          <div>
-            <div class="colhead">Cargos</div>
-            <div class="role"><span class="name">CEO (acumula)</span><span class="pill pill-f1">F1</span><span class="fn">Onboarding manual dos primeiros clientes — a melhor fonte de aprendizado de produto.</span></div>
-            <div class="role"><span class="name">Analista de Onboarding/Suporte N1</span><span class="pill pill-f2">F2</span><span class="fn">Frequentemente a <b>primeira contratação da empresa</b> — implanta e atende clientes novos.</span></div>
-            <div class="role"><span class="name">CS Manager</span><span class="pill pill-f3">F3</span><span class="fn">Dono da retenção e da expansão da carteira de clientes.</span></div>
-            <div class="role"><span class="name">Head de Customer Success</span><span class="pill pill-f3">F3</span><span class="fn">Estratégia de sucesso do cliente e redução estrutural de churn.</span></div>
-          </div>
-          <div>
-            <div class="colhead">Rotinas &amp; processos</div>
-            <div class="routine"><span class="cad">Por cliente</span><span class="txt">Checklist de onboarding: implantação, treinamento, ativação.</span></div>
-            <div class="routine"><span class="cad">Semanal</span><span class="txt">Triagem de tickets de suporte.</span></div>
-            <div class="routine"><span class="cad">Mensal</span><span class="txt">Health-score de risco de churn por conta.</span></div>
-            <div class="routine"><span class="cad">Trimestral</span><span class="txt">NPS e QBR para as contas maiores.</span></div>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <!-- 6 Financeiro -->
-    <details class="dept">
-      <summary>
-        <div class="dept-head-l"><span class="num">06</span><h3>Financeiro</h3></div>
-        <div class="dept-head-r"><span class="pill pill-f2">F2</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="dept-body">
-        <div class="dept-cols">
-          <div>
-            <div class="colhead">Cargos</div>
-            <div class="role"><span class="name">CEO + contador terceirizado</span><span class="pill pill-f1">F1</span><span class="fn">Cobre fechamento fiscal básico e fluxo de caixa manual.</span></div>
-            <div class="role"><span class="name">Analista Financeiro/Billing</span><span class="pill pill-f2">F2</span><span class="fn">Cobrança recorrente, régua de inadimplência, conciliação bancária.</span></div>
-            <div class="role"><span class="name">Controller</span><span class="pill pill-f3">F3</span><span class="fn">Fechamento contábil, DRE gerencial, compliance fiscal.</span></div>
-            <div class="role"><span class="name">CFO</span><span class="pill pill-f3">F3</span><span class="fn">Planejamento financeiro, unit economics, relação com investidores.</span></div>
-          </div>
-          <div>
-            <div class="colhead">Rotinas &amp; processos</div>
-            <div class="routine"><span class="cad">Diário</span><span class="txt">Conciliação das cobranças recorrentes.</span></div>
-            <div class="routine"><span class="cad">Semanal</span><span class="txt">Fluxo de caixa.</span></div>
-            <div class="routine"><span class="cad">Mensal</span><span class="txt">Fechamento contábil e DRE gerencial.</span></div>
-            <div class="routine"><span class="cad">Trimestral</span><span class="txt">Orçado vs. realizado.</span></div>
-            <div class="routine"><span class="cad">Anual</span><span class="txt">Obrigações fiscais e planejamento tributário.</span></div>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <!-- 7 Jurídico -->
-    <details class="dept">
-      <summary>
-        <div class="dept-head-l"><span class="num">07</span><h3>Jurídico &amp; Compliance</h3></div>
-        <div class="dept-head-r"><span class="pill pill-f3">F3</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="dept-body">
-        <div class="dept-cols">
-          <div>
-            <div class="colhead">Cargos</div>
-            <div class="role"><span class="name">Assessoria jurídica terceirizada</span><span class="pill pill-f1">F1</span><span class="fn">Contratos, termos de uso e societário desde o dia um — como o produto trata dado de saúde de paciente, due diligence de LGPD começa aqui, não só na F3.</span></div>
-            <div class="role"><span class="name">DPO / Responsável por Compliance</span><span class="pill pill-f3">F3</span><span class="fn">Governança de dados, auditoria de acesso, resposta a incidentes.</span></div>
-            <div class="role"><span class="name">Jurídico interno</span><span class="pill pill-f3">F3</span><span class="fn">Entra quando o volume de contratos e disputas justifica internalizar.</span></div>
-          </div>
-          <div>
-            <div class="colhead">Rotinas &amp; processos</div>
-            <div class="routine"><span class="cad">Por cliente</span><span class="txt">Aceite de termos de uso + acordo de tratamento de dados (DPA).</span></div>
-            <div class="routine"><span class="cad">Trimestral</span><span class="txt">Auditoria de acesso a dados sensíveis.</span></div>
-            <div class="routine"><span class="cad">Anual</span><span class="txt">Revisão de contratos-padrão e política de privacidade.</span></div>
-          </div>
-        </div>
-      </div>
-    </details>
-
-    <!-- 8 Gente -->
-    <details class="dept">
-      <summary>
-        <div class="dept-head-l"><span class="num">08</span><h3>Gente &amp; Cultura</h3></div>
-        <div class="dept-head-r"><span class="pill pill-f3">F3</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="dept-body">
-        <div class="dept-cols">
-          <div>
-            <div class="colhead">Cargos</div>
-            <div class="role"><span class="name">CEO (acumula)</span><span class="pill pill-f1">F1</span><span class="fn">Recrutamento e cultura nas primeiras contratações.</span></div>
-            <div class="role"><span class="name">Generalista de RH</span><span class="pill pill-f3">F3</span><span class="fn">Recrutamento, onboarding de novos funcionários, benefícios — entra por volta de 15+ pessoas.</span></div>
-            <div class="role"><span class="name">Head de Gente &amp; Cultura</span><span class="pill pill-f3">F3</span><span class="fn">Clima organizacional e plano de carreira.</span></div>
-          </div>
-          <div>
-            <div class="colhead">Rotinas &amp; processos</div>
-            <div class="routine"><span class="cad">Por contratação</span><span class="txt">Processo de recrutamento padronizado + onboarding.</span></div>
-            <div class="routine"><span class="cad">Mensal</span><span class="txt">1:1 entre líderes e liderados.</span></div>
-            <div class="routine"><span class="cad">Semestral</span><span class="txt">Avaliação de desempenho.</span></div>
-            <div class="routine"><span class="cad">Anual</span><span class="txt">Pesquisa de clima organizacional.</span></div>
-          </div>
-        </div>
-      </div>
-    </details>
-  </div>
-</section>
-
-<section id="roadmap">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Crescimento</div>
-      <h2>Roadmap de 5 anos</h2>
-      <p>Projeção-benchmark para um SaaS B2B odontológico brasileiro (ticket médio ~R$300/mês por clínica). <b>Não são metas fechadas</b> — sirvam de ponto de partida para os sócios calibrarem números reais assim que houver dados do primeiro cliente.</p>
-    </div>
-
-    <figure class="chart">
-      <svg viewBox="0 0 900 320" role="img" aria-label="Gráfico de linha mostrando o crescimento projetado do ARR de R$180 mil no Ano 1 até R$15,6 milhões no Ano 5, formato de curva de crescimento acelerado típica de SaaS.">
-        <line class="chart-grid" x1="40" y1="260" x2="880" y2="260"></line>
-        <line class="chart-grid" x1="40" y1="150" x2="880" y2="150"></line>
-        <line class="chart-grid" x1="40" y1="40" x2="880" y2="40"></line>
-        <text x="30" y="264" text-anchor="end" font-size="10" fill="var(--ink-faint)">R$0</text>
-        <text x="30" y="154" font-size="10" text-anchor="end" fill="var(--ink-faint)">R$8 mi</text>
-        <text x="30" y="44" font-size="10" text-anchor="end" fill="var(--ink-faint)">R$16 mi</text>
-
-        <path class="chart-area" d="M60,257.5 L260,244.9 L460,213.3 L660,152.8 L860,45.5 L860,260 L60,260 Z"></path>
-        <path class="chart-arr" d="M60,257.5 L260,244.9 L460,213.3 L660,152.8 L860,45.5"></path>
-
-        <circle class="chart-dot" cx="60" cy="257.5" r="4.5"></circle>
-        <circle class="chart-dot" cx="260" cy="244.9" r="4.5"></circle>
-        <circle class="chart-dot" cx="460" cy="213.3" r="4.5"></circle>
-        <circle class="chart-dot" cx="660" cy="152.8" r="4.5"></circle>
-        <circle class="chart-dot end" cx="860" cy="45.5" r="5.5"></circle>
-
-        <text class="chart-label" x="60" y="240" text-anchor="middle" font-size="11.5">R$180 mil</text>
-        <text class="chart-label" x="260" y="227" text-anchor="middle" font-size="11.5">R$1,1 mi</text>
-        <text class="chart-label" x="460" y="196" text-anchor="middle" font-size="11.5">R$3,4 mi</text>
-        <text class="chart-label" x="660" y="136" text-anchor="middle" font-size="11.5">R$7,8 mi</text>
-        <text class="chart-label" x="860" y="30" text-anchor="middle" font-size="12.5">R$15,6 mi</text>
-
-        <text class="chart-year" x="60" y="285" text-anchor="middle" font-size="11">Ano 1</text>
-        <text class="chart-year" x="260" y="285" text-anchor="middle" font-size="11">Ano 2</text>
-        <text class="chart-year" x="460" y="285" text-anchor="middle" font-size="11">Ano 3</text>
-        <text class="chart-year" x="660" y="285" text-anchor="middle" font-size="11">Ano 4</text>
-        <text class="chart-year" x="860" y="285" text-anchor="middle" font-size="11">Ano 5</text>
-      </svg>
-      <figcaption>ARR projetado (receita recorrente anual) — curva típica de "hockey stick" de SaaS B2B: crescimento lento até validar o modelo comercial (Ano 1–2), depois aceleração com motion de vendas e marketing estruturado (Ano 3 em diante).</figcaption>
-    </figure>
-
-    <div class="table-wrap">
-      <table class="roadmap-table">
-        <thead>
-          <tr>
-            <th>Ano</th>
-            <th class="num">Clientes</th>
-            <th class="num">MRR</th>
-            <th class="num">ARR</th>
-            <th class="num">Headcount</th>
-            <th class="num">Churn alvo</th>
-            <th>Marco do ano</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Ano 1</td><td class="num">50</td><td class="num">R$ 15 mil</td><td class="num">R$ 180 mil</td><td class="num">4</td><td class="num">&lt; 5%/mês</td><td>Primeiro cliente pagante + validação de PMF</td></tr>
-          <tr><td>Ano 2</td><td class="num">300</td><td class="num">R$ 90 mil</td><td class="num">R$ 1,1 mi</td><td class="num">10</td><td class="num">&lt; 4%/mês</td><td>Primeira contratação comercial full-time</td></tr>
-          <tr><td>Ano 3</td><td class="num">800</td><td class="num">R$ 280 mil</td><td class="num">R$ 3,4 mi</td><td class="num">20</td><td class="num">&lt; 3%/mês</td><td>Os 8 departamentos com liderança dedicada</td></tr>
-          <tr><td>Ano 4</td><td class="num">1.800</td><td class="num">R$ 650 mil</td><td class="num">R$ 7,8 mi</td><td class="num">38</td><td class="num">&lt; 2,5%/mês</td><td>Segunda linha de produto/módulo lançada</td></tr>
-          <tr><td>Ano 5</td><td class="num">3.500</td><td class="num">R$ 1,3 mi</td><td class="num">R$ 15,6 mi</td><td class="num">60</td><td class="num">&lt; 2%/mês</td><td>Posição de referência no mercado nacional</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="milestones">
-      <div class="milestone"><span class="yr">01</span><div class="body"><b>Validação</b><span>Fechar o primeiro cliente, validar onboarding e discurso comercial na prática, iterar o produto com feedback real antes de investir em aquisição paga pesada.</span></div></div>
-      <div class="milestone"><span class="yr">02</span><div class="body"><b>Tração</b><span>Primeiras contratações-chave (SDR/Closer, Suporte, Dev). CAC e payback começam a ser medidos de verdade; motion comercial deixa de depender só do fundador.</span></div></div>
-      <div class="milestone"><span class="yr">03</span><div class="body"><b>Estruturação</b><span>Todos os 8 departamentos operando com pelo menos uma liderança dedicada. Momento natural para avaliar uma rodada seed/anjo caso o crescimento peça caixa além do gerado organicamente.</span></div></div>
-      <div class="milestone"><span class="yr">04</span><div class="body"><b>Expansão</b><span>Upsell de módulos adicionais, parcerias com associações e faculdades de odontologia, possível início de expansão regional.</span></div></div>
-      <div class="milestone"><span class="yr">05</span><div class="body"><b>Consolidação</b><span>Empresa como referência no segmento de gestão para clínicas odontológicas — ponto de decisão entre rodada Série A, sustentabilidade via lucro, ou expansão internacional.</span></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="marketing">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Divulgação</div>
-      <h2>Plano de conteúdo de lançamento — 30 posts</h2>
-      <p>Cada post mostra <b>uma funcionalidade real do GestOdonto</b> resolvendo uma dor concreta de clínica — linguagem simples, tom leve, sempre com a tela do sistema aparecendo. O roteiro já vem pronto slide a slide (carrossel) ou cena a cena (vídeo), pra quem for produzir — designer ou quem gravar o vídeo — não precisar inventar o que falar.</p>
-    </div>
-
-    <div class="cadence-card">
-      <div><div class="ck">Cadência</div><div class="cv">3 posts por semana — seg / qua / sex</div></div>
-      <div><div class="ck">Duração</div><div class="cv">10 semanas (~2,5 meses) para os 30 posts</div></div>
-      <div><div class="ck">Formato</div><div class="cv">Alterna a cada post: Carrossel → Vídeo → Carrossel...</div></div>
-    </div>
-
-    <div class="notice" style="margin-top:0;">
-      <b>Como produzir rápido, sem time dedicado:</b> grave/print sempre a tela real do sistema (não precisa arte sofisticada) · gancho forte nos primeiros 3 segundos, antes de qualquer explicação · uma funcionalidade por post, nunca várias ao mesmo tempo · frases curtas, sem jargão técnico · feche sempre com o mesmo CTA ("testa grátis 7 dias, link na bio") pra criar repetição de marca.
-    </div>
-
-    <div class="pillar-legend">
-      <span class="pillar-chip">Agenda</span>
-      <span class="pillar-chip">Pacientes (Ficha 360°)</span>
-      <span class="pillar-chip">Prontuário</span>
-      <span class="pillar-chip">Odontograma</span>
-      <span class="pillar-chip">Financeiro</span>
-      <span class="pillar-chip">WhatsApp</span>
-      <span class="pillar-chip">Documentos da clínica</span>
-      <span class="pillar-chip">Permissões &amp; Auditoria</span>
-      <span class="pillar-chip">Relatórios</span>
-      <span class="pillar-chip">Tarefas &amp; Branding</span>
-      <span class="pillar-chip">IA clínica</span>
-      <span class="pillar-chip">Onboarding</span>
-      <span class="pillar-chip">Importação de dados</span>
-      <span class="pillar-chip">Suporte</span>
-      <span class="pillar-chip">Institucional</span>
-    </div>
-
-    <!-- Semana 1 -->
-    <details class="grp" open>
-      <summary>
-        <div class="grp-head-l"><span class="letter">S1</span><h3>Semana 1</h3></div>
-        <div class="grp-head-r"><span class="week-count">Posts #01–#03</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#01</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Agenda</span></div>
-          <h4 class="post-hook">"Sua agenda ainda é uma zona de guerra às segundas de manhã?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima, em texto grande.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Papel, WhatsApp da recepção e caderno de horário — ninguém sabe se aquele horário das 14h foi remarcado três vezes.</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>No GestOdonto, a Agenda mostra o dia, a semana ou a lista completa, com filtro por profissional e resumo do dia assim que você abre o sistema.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print da Agenda em visão "Dia", destacando o filtro por profissional e o resumo do dia no topo.</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Testa grátis por 7 dias e organiza sua semana em 5 minutos. Link na bio.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Segunda-feira sem correria começa com uma agenda que faz sentido. 🦷 #GestOdonto</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#02</span><span class="pill-video">Vídeo</span><span class="post-pillar">WhatsApp</span></div>
-          <h4 class="post-hook">"Quantas faltas sua clínica teve esse mês?"</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Pessoa com celular na mão, texto na tela com a pergunta acima.</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Gravação de tela: lembrete automático saindo no WhatsApp do paciente → confirmação chegando de volta → aparecendo na agenda. Narração: "No GestOdonto, o lembrete vai sozinho pro WhatsApp do paciente — e a confirmação já aparece aqui, sem ninguém precisar ligar."</span></div>
-          <div class="script-row"><b>CTA (20–25s)</b><span>"Menos falta, mais cadeira ocupada. Testa grátis, link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Cada falta é uma cadeira vazia que custou dinheiro. Automatiza isso. 📲</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#03</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Institucional</span></div>
-          <h4 class="post-hook">"Por que criamos o GestOdonto?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Porque vimos dentista bom de clínica virando refém de sistema ruim — travando, sem suporte, difícil de usar.</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>Criamos um sistema pensado pra quem atende, não pra quem programa: simples de aprender, rápido no dia a dia.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print da tela inicial/dashboard, mostrando o visual limpo do sistema.</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Se você já sofreu com sistema de clínica, testa o GestOdonto. Link na bio.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Gestão de clínica não devia ser a parte mais difícil do seu dia. 🦷</div>
-        </div>
-      </div>
-    </details>
-
-    <!-- Semana 2 -->
-    <details class="grp">
-      <summary>
-        <div class="grp-head-l"><span class="letter">S2</span><h3>Semana 2</h3></div>
-        <div class="grp-head-r"><span class="week-count">Posts #04–#06</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#04</span><span class="pill-video">Vídeo</span><span class="post-pillar">Prontuário</span></div>
-          <h4 class="post-hook">"Você lembra o que anotou no prontuário há 3 meses?"</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Texto na tela com a pergunta, cara de "quem nunca".</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Tela do Prontuário: uma evolução clínica já assinada, com data, e o histórico em timeline. Narração: "No GestOdonto cada evolução fica assinada, com data — você acessa o histórico completo em segundos, nada de caderno ou pasta perdida."</span></div>
-          <div class="script-row"><b>CTA</b><span>"Prontuário organizado é paciente bem cuidado. Link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Sua memória não devia ser o prontuário da clínica. 📋</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#05</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Odontograma</span></div>
-          <h4 class="post-hook">"Explicar tratamento pro paciente sem desenho na mão?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Explicar um canal ou extração só de boca deixa o paciente com mais dúvida do que confiança.</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>O Odontograma do GestOdonto é um mapa visual da boca, conectado ao histórico e ao orçamento — mostra o dente e o tratamento na tela.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print do Odontograma com um dente marcado/alertado e o tratamento ao lado.</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Paciente que entende o tratamento confia mais e falta menos. Testa grátis.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Um bom desenho vale mais que mil explicações. 🦷</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#06</span><span class="pill-video">Vídeo</span><span class="post-pillar">Financeiro</span></div>
-          <h4 class="post-hook">"Você sabe exatamente quanto vai entrar de caixa essa semana?"</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Pergunta na tela, tom de "sejamos sinceros".</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Tela do Financeiro: contas a receber filtradas por status (pago/pendente). Narração: "No GestOdonto, contas a receber, convênios e comissões ficam num só lugar — você abre e já sabe o que entra e o que está atrasado."</span></div>
-          <div class="script-row"><b>CTA</b><span>"Financeiro claro é decisão mais fácil. Link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Se seu financeiro só existe na cabeça do sócio, tá na hora de mudar. 💰</div>
-        </div>
-      </div>
-    </details>
-
-    <!-- Semana 3 -->
-    <details class="grp">
-      <summary>
-        <div class="grp-head-l"><span class="letter">S3</span><h3>Semana 3</h3></div>
-        <div class="grp-head-r"><span class="week-count">Posts #07–#09</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#07</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Pacientes (Ficha 360°)</span></div>
-          <h4 class="post-hook">"Onde está a ficha completa do seu paciente agora?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Espalhada entre WhatsApp, papel, planilha e a memória de quem atendeu da última vez.</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>No GestOdonto, cada paciente tem ficha única: dados, timeline, documentos, agenda, financeiro, orçamentos e anamnese — tudo no mesmo lugar.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print da tela do Paciente, mostrando as abas (timeline, financeiro, documentos).</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Atendimento rápido começa com informação na mão. Testa grátis 7 dias.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Tudo sobre o paciente, num clique. Sem adivinhação. 🗂️</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#08</span><span class="pill-video">Vídeo</span><span class="post-pillar">Agenda</span></div>
-          <h4 class="post-hook">"Sua clínica tem mais de um dentista? Presta atenção nisso."</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela, cara de dica.</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Alternando o filtro de profissional na Agenda, mostrando a agenda de cada dentista isolada. Narração: "Com o filtro por profissional, cada dentista vê só a própria agenda — e a recepção enxerga todo mundo ao mesmo tempo, sem bagunça."</span></div>
-          <div class="script-row"><b>CTA</b><span>"Cada profissional na sua agenda, sem confusão. Link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Clínica com vários dentistas precisa de agenda que aguenta o tranco. 📅</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#09</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">WhatsApp</span></div>
-          <h4 class="post-hook">"Sabia que confirmar consulta por WhatsApp reduz falta?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Ligar pra confirmar consulta toma tempo da recepção — e ainda assim tem gente que esquece.</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>O GestOdonto manda a confirmação automática pelo WhatsApp e registra a resposta do paciente direto na agenda.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print do histórico de mensagens de WhatsApp dentro da ficha do paciente.</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Menos ligação, menos falta. Testa grátis.</span></div>
-          <div class="post-caption"><b>Legenda:</b> A recepção agradece — e o caixa também. 📲</div>
-        </div>
-      </div>
-    </details>
-
-    <!-- Semana 4 -->
-    <details class="grp">
-      <summary>
-        <div class="grp-head-l"><span class="letter">S4</span><h3>Semana 4</h3></div>
-        <div class="grp-head-r"><span class="week-count">Posts #10–#12</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#10</span><span class="pill-video">Vídeo</span><span class="post-pillar">Odontograma</span></div>
-          <h4 class="post-hook">"Esse tratamento ficou pra depois... e sua clínica esqueceu."</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima, tom de alerta leve.</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Odontograma mostrando um alerta visual de tratamento pendente num dente específico. Narração: "O Odontograma guarda o alerta do tratamento pendente — na próxima consulta, ele aparece sozinho, sem depender da memória de ninguém."</span></div>
-          <div class="script-row"><b>CTA</b><span>"Tratamento pendente não escapa mais. Link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Esse canal que ficou pra depois? O sistema não esquece. 🦷</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#11</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Documentos da clínica</span></div>
-          <h4 class="post-hook">"Atestado feito no Word, com fonte errada, sem logo?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Documento sem identidade passa a impressão errada — mesmo quando o atendimento foi ótimo.</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>No GestOdonto, atestados, prescrições e orçamentos saem prontos, com a identidade visual da sua clínica, direto do prontuário.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print de um atestado/orçamento gerado com o logo da clínica.</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Documento profissional em segundos. Testa grátis.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Detalhe pequeno, impressão grande. 📄</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#12</span><span class="pill-video">Vídeo</span><span class="post-pillar">Prontuário</span></div>
-          <h4 class="post-hook">"Anamnese em papel some. Anamnese digital não."</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela.</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Tela de anamnese estruturada sendo preenchida, campos organizados. Narração: "A anamnese do GestOdonto é estruturada — perguntas certas, no lugar certo, e fica salva pra sempre na ficha do paciente."</span></div>
-          <div class="script-row"><b>CTA</b><span>"Nada se perde, nada fica pela metade. Link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Anamnese completa é atendimento mais seguro. 🩺</div>
-        </div>
-      </div>
-    </details>
-
-    <!-- Semana 5 -->
-    <details class="grp">
-      <summary>
-        <div class="grp-head-l"><span class="letter">S5</span><h3>Semana 5</h3></div>
-        <div class="grp-head-r"><span class="week-count">Posts #13–#15</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#13</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Financeiro</span></div>
-          <h4 class="post-hook">"Convênio e comissão de dentista, tudo na mesma planilha confusa?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Calcular repasse de convênio e comissão na mão é fonte garantida de erro (e de discussão no fim do mês).</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>O Financeiro do GestOdonto organiza convênios, comissões e recebimentos com relatório pronto pra fechar o mês.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print do relatório financeiro com comissões por profissional.</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Fim de mês sem dor de cabeça. Testa grátis 7 dias.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Comissão certa é sócio e equipe em paz. 💼</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#14</span><span class="pill-video">Vídeo</span><span class="post-pillar">Relatórios</span></div>
-          <h4 class="post-hook">"Sua clínica está lucrando ou só parece que está?"</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Pergunta provocativa na tela.</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Tela de relatórios avançados com gráficos de faturamento/atendimentos. Narração: "Os relatórios do GestOdonto mostram o que realmente importa: quanto entrou, quanto falta receber e onde a clínica performa melhor."</span></div>
-          <div class="script-row"><b>CTA</b><span>"Decisão com dado, não com achismo. Link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Achismo não paga conta. Relatório sim. 📊</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#15</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Agenda</span></div>
-          <h4 class="post-hook">"Você abre o sistema de manhã e já sabe como vai ser seu dia?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Sem visão clara, o dia começa no improviso — e qualquer imprevisto vira caos.</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>O resumo do dia do GestOdonto mostra, assim que você abre o sistema, quantas consultas tem, horários livres e o que precisa de atenção.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print do resumo do dia na tela inicial da Agenda.</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Comece o dia sabendo o que vem por aí. Testa grátis.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Dia organizado começa antes do primeiro paciente chegar. ☀️</div>
-        </div>
-      </div>
-    </details>
-
-    <!-- Semana 6 -->
-    <details class="grp">
-      <summary>
-        <div class="grp-head-l"><span class="letter">S6</span><h3>Semana 6</h3></div>
-        <div class="grp-head-r"><span class="week-count">Posts #16–#18</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#16</span><span class="pill-video">Vídeo</span><span class="post-pillar">WhatsApp</span></div>
-          <h4 class="post-hook">"Paciente reclamou de algo e ninguém lembra da conversa?"</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela.</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Histórico de mensagens de WhatsApp dentro da ficha do paciente, com data e conteúdo visível. Narração: "Toda conversa de WhatsApp com o paciente fica registrada na ficha dele — se precisar consultar depois, está tudo ali."</span></div>
-          <div class="script-row"><b>CTA</b><span>"Nada se perde na conversa. Link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Histórico completo, sem "ele disse, ela disse". 💬</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#17</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">IA clínica</span></div>
-          <h4 class="post-hook">"E se o sistema resumisse o prontuário pra você?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Ler todo o histórico de um paciente antigo antes de cada retorno toma tempo que você não tem entre um atendimento e outro.</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>A IA clínica do GestOdonto gera um resumo do histórico do paciente, direto no prontuário, pra você se atualizar em segundos.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print do resumo clínico gerado por IA dentro do prontuário.</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Menos tempo lendo, mais tempo atendendo. Testa grátis.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Resumo pronto antes de você abrir a boca do paciente. 🤖🦷</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#18</span><span class="pill-video">Vídeo</span><span class="post-pillar">Odontograma</span></div>
-          <h4 class="post-hook">"Paciente pergunta 'quanto custa esse tratamento?' e você trava?"</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima, cara de situação incômoda reconhecível.</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Clique no dente do odontograma abrindo direto a tela de orçamento daquele tratamento. Narração: "Direto do odontograma, você já monta o orçamento daquele dente e daquele tratamento — sem sair da tela, sem calculadora do celular."</span></div>
-          <div class="script-row"><b>CTA</b><span>"Orçamento na hora, sem gaguejar. Link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Do dente ao orçamento em um clique. 💰🦷</div>
-        </div>
-      </div>
-    </details>
-
-    <!-- Semana 7 -->
-    <details class="grp">
-      <summary>
-        <div class="grp-head-l"><span class="letter">S7</span><h3>Semana 7</h3></div>
-        <div class="grp-head-r"><span class="week-count">Posts #19–#21</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#19</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Permissões &amp; Auditoria</span></div>
-          <h4 class="post-hook">"Sua recepção tem acesso ao financeiro inteiro da clínica?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Sistema sem controle de permissão é porta aberta pra erro (e, às vezes, pra coisa pior).</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>No GestOdonto, cada função da equipe tem seu nível de acesso — e tudo o que é feito no sistema fica registrado na auditoria.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print da tela de permissões por função.</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Controle de verdade sobre quem vê o quê. Testa grátis.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Confiança na equipe + controle no sistema. 🔐</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#20</span><span class="pill-video">Vídeo</span><span class="post-pillar">Pacientes (Ficha 360°)</span></div>
-          <h4 class="post-hook">"Quer saber tudo que já aconteceu com esse paciente, sem abrir 5 telas?"</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela.</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Rolando a timeline do paciente: consultas passadas, documentos e pagamentos em ordem cronológica. Narração: "A timeline do paciente junta consulta, documento e pagamento numa linha só do tempo — você rola e já entende a história inteira."</span></div>
-          <div class="script-row"><b>CTA</b><span>"A história do paciente, em uma rolada de tela. Link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Contexto completo antes de abrir a boca. 🕐</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#21</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Documentos da clínica</span></div>
-          <h4 class="post-hook">"Orçamento genérico não fecha tratamento."</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Um orçamento mal formatado, sem cara de profissional, faz o paciente hesitar e pesquisar em outro lugar.</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>No GestOdonto, o orçamento sai com a identidade da sua clínica, detalhado, pronto pra enviar por WhatsApp ou e-mail.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print de um orçamento gerado, com o layout com a marca da clínica.</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Orçamento bonito também vende. Testa grátis.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Primeira impressão do orçamento pode fechar (ou perder) o tratamento. 📑</div>
-        </div>
-      </div>
-    </details>
-
-    <!-- Semana 8 -->
-    <details class="grp">
-      <summary>
-        <div class="grp-head-l"><span class="letter">S8</span><h3>Semana 8</h3></div>
-        <div class="grp-head-r"><span class="week-count">Posts #22–#24</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#22</span><span class="pill-video">Vídeo</span><span class="post-pillar">Financeiro</span></div>
-          <h4 class="post-hook">"Quanto da sua clínica está pendurado em 'depois eu recebo'?"</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela.</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Relatório de recebimentos com contas em aberto por paciente. Narração: "O relatório de recebimentos do GestOdonto mostra exatamente quem deve, quanto deve e desde quando — sem caçar em conversa antiga."</span></div>
-          <div class="script-row"><b>CTA</b><span>"Cobrar fica mais fácil quando o número está na tela. Link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Inadimplência não se resolve sozinha — mas começa sendo enxergada. 📉</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#23</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Tarefas &amp; Branding</span></div>
-          <h4 class="post-hook">"Sua equipe sabe exatamente o que precisa fazer hoje?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Recado no grupo de WhatsApp da equipe some na rolagem — e a tarefa importante fica esquecida.</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>O GestOdonto tem tarefas e tags organizadas dentro do próprio sistema, com a marca da sua clínica em tudo que é gerado.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print da lista de tarefas atribuídas por pessoa.</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Equipe alinhada, sem depender de recado perdido. Testa grátis.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Tarefa combinada é tarefa registrada. ✅</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#24</span><span class="pill-video">Vídeo</span><span class="post-pillar">IA clínica</span></div>
-          <h4 class="post-hook">"Escrever a mesma prescrição pela centésima vez?"</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima, tom de cansaço bem-humorado.</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Tela mostrando a IA sugerindo/montando uma prescrição a partir do diagnóstico registrado. Narração: "A IA clínica do GestOdonto ajuda a montar a prescrição a partir do que já está no prontuário — você revisa, ajusta e assina."</span></div>
-          <div class="script-row"><b>CTA</b><span>"Menos repetição, mais atenção ao paciente. Link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Você continua no comando — a IA só adianta o trabalho chato. ✍️🤖</div>
-        </div>
-      </div>
-    </details>
-
-    <!-- Semana 9 -->
-    <details class="grp">
-      <summary>
-        <div class="grp-head-l"><span class="letter">S9</span><h3>Semana 9</h3></div>
-        <div class="grp-head-r"><span class="week-count">Posts #25–#27</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#25</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Onboarding</span></div>
-          <h4 class="post-hook">"Medo de trocar de sistema e travar a clínica no meio do caminho?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Trocar de sistema parece arriscado — e se a equipe não aprender rápido?</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>O onboarding guiado do GestOdonto leva sua equipe passo a passo, dentro do próprio sistema, até todo mundo estar confortável.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print da tela de onboarding com checklist de primeiros passos.</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Trocar de sistema sem trauma. Testa grátis 7 dias.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Ninguém troca de sistema sozinho — a gente guia. 🧭</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#26</span><span class="pill-video">Vídeo</span><span class="post-pillar">Importação de dados</span></div>
-          <h4 class="post-hook">"E os dados que já estão na planilha antiga? Vai perder tudo?"</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela.</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Processo de importação assistida trazendo pacientes de uma planilha para o sistema. Narração: "Na importação assistida, a gente ajuda a trazer os dados da sua planilha ou sistema antigo pro GestOdonto — sem começar do zero."</span></div>
-          <div class="script-row"><b>CTA</b><span>"Seu histórico vem junto. Link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Trocar de sistema não devia significar perder anos de histórico. 📥</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#27</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Relatórios</span></div>
-          <h4 class="post-hook">"Você sabe qual tratamento mais dá retorno pra sua clínica?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Sem relatório, a resposta é sempre "eu acho que é..." — e decisão no achismo custa caro.</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>Os relatórios avançados do GestOdonto cruzam atendimento, financeiro e profissional pra mostrar onde a clínica realmente ganha dinheiro.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print de um relatório comparando tratamentos/procedimentos.</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Decisão de verdade, com número de verdade. Testa grátis.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Achismo é caro. Relatório é de graça no plano. 📈</div>
-        </div>
-      </div>
-    </details>
-
-    <!-- Semana 10 -->
-    <details class="grp">
-      <summary>
-        <div class="grp-head-l"><span class="letter">S10</span><h3>Semana 10</h3></div>
-        <div class="grp-head-r"><span class="week-count">Posts #28–#30</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </summary>
-      <div class="grp-body">
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#28</span><span class="pill-video">Vídeo</span><span class="post-pillar">Suporte</span></div>
-          <h4 class="post-hook">"Já ficou horas esperando resposta de suporte de sistema?"</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima, tom de frustração reconhecível.</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Tela de chat de suporte com resposta rápida. Narração: "No plano Clínica, o suporte é prioritário — alguém te responde de verdade, sem ficar horas no vácuo esperando solução."</span></div>
-          <div class="script-row"><b>CTA</b><span>"Suporte que resolve, não só protocola. Link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Sistema trava, hora acaba, paciente espera. Suporte rápido importa. 🆘</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#29</span><span class="pill-carrossel">Carrossel</span><span class="post-pillar">Institucional</span></div>
-          <h4 class="post-hook">"O que muda na rotina do consultório com o GestOdonto?"</h4>
-          <div class="script-row"><b>Slide 1 — Capa</b><span>O gancho acima.</span></div>
-          <div class="script-row"><b>Slide 2 — A dor</b><span>Menos tempo lutando com planilha e caderno, menos ansiedade no fim do mês, menos paciente reclamando de falta de retorno.</span></div>
-          <div class="script-row"><b>Slide 3 — Solução</b><span>Agenda organizada, prontuário completo, financeiro claro e WhatsApp automático — tudo puxando pro mesmo lugar: você cuidando do paciente, não da papelada.</span></div>
-          <div class="script-row"><b>Slide 4 — Tela</b><span>Print combinando 2–3 telas do sistema lado a lado (agenda + financeiro + prontuário).</span></div>
-          <div class="script-row"><b>Slide 5 — CTA</b><span>Testa 7 dias grátis e sente a diferença na sua rotina. Link na bio.</span></div>
-          <div class="post-caption"><b>Legenda:</b> Sistema bom é aquele que você nem percebe que está usando. 🦷✨</div>
-        </div>
-        <div class="post-card">
-          <div class="post-head"><span class="post-num">#30</span><span class="pill-video">Vídeo</span><span class="post-pillar">Agenda + WhatsApp</span></div>
-          <h4 class="post-hook">"Um dia normal de clínica, sem nenhuma falta."</h4>
-          <div class="script-row"><b>Gancho (0–3s)</b><span>Frase acima na tela, clima de "dia perfeito".</span></div>
-          <div class="script-row"><b>Mostra (4–20s)</b><span>Sequência rápida: notificação de lembrete de WhatsApp saindo → paciente confirmando → agenda do dia mostrando só consultas confirmadas, cadeira cheia. Narração: "Lembrete automático, confirmação registrada, agenda cheia sem esforço — isso é rotina com o GestOdonto."</span></div>
-          <div class="script-row"><b>CTA</b><span>"Quer um dia assim na sua clínica? Testa grátis, link na bio."</span></div>
-          <div class="post-caption"><b>Legenda:</b> Isso não é sorte. É sistema. 🦷📅</div>
-        </div>
-      </div>
-    </details>
-  </div>
-</section>
-
-<footer class="wrap">
-  <p><span class="conf">Documento confidencial — uso exclusivo dos sócios.</span> Não distribuir externamente. Conteúdo inicial para validação: nome, cargos e projeções devem ser ajustados conforme decisões reais dos sócios e os primeiros dados de clientes.</p>
-</footer>
+<div id="content" style="display:none"></div>
 
 <script>
 (function () {
-  var boxes = Array.prototype.slice.call(document.querySelectorAll('.checklist input[type="checkbox"]'));
-  var API = '/api/checklist';
-  var POLL_MS = 15000;
-  var pending = {}; // ids com POST em andamento — não deixa o polling sobrescrever o clique
+  var TOKEN_KEY = 'gestodonto_admin_token';
+  var loginWrapEl = document.querySelector('.login-wrap');
+  var contentEl = document.getElementById('content');
+  var pwdEl = document.getElementById('pwd');
+  var loginMsgEl = document.getElementById('loginMsg');
 
-  function updateProgress() {
-    var groups = {};
-    var totalDone = 0;
-    boxes.forEach(function (b) {
-      var g = b.dataset.group;
-      if (!groups[g]) groups[g] = { done: 0, total: 0 };
-      groups[g].total++;
-      if (b.checked) { groups[g].done++; totalDone++; }
-      var item = b.closest('.chk-item');
-      if (item) item.classList.toggle('done', b.checked);
-    });
-    document.querySelectorAll('[data-group-progress]').forEach(function (el) {
-      var g = el.getAttribute('data-group-progress');
-      var d = groups[g] || { done: 0, total: 0 };
-      el.textContent = d.done + '/' + d.total;
-    });
-    var total = boxes.length;
-    var pct = total ? Math.round((totalDone / total) * 100) : 0;
-    var bar = document.getElementById('overall-bar');
-    var label = document.getElementById('overall-label');
-    if (bar) bar.style.width = pct + '%';
-    if (label) label.textContent = totalDone + '/' + total + ' concluído (' + pct + '%)';
+  function getToken() { return localStorage.getItem(TOKEN_KEY); }
+  function setToken(t) { localStorage.setItem(TOKEN_KEY, t); }
+  function clearToken() { localStorage.removeItem(TOKEN_KEY); }
+
+  function showLogin(msg) {
+    loginWrapEl.style.display = 'block';
+    contentEl.style.display = 'none';
+    loginMsgEl.innerHTML = msg ? ('<div class="msg">' + msg + '</div>') : '';
   }
 
-  function applyState(state) {
-    boxes.forEach(function (b) {
-      if (pending[b.id]) return;
-      var val = !!state[b.id];
-      if (b.checked !== val) b.checked = val;
-    });
-    updateProgress();
-  }
+  function initChecklist() {
+    var boxes = Array.prototype.slice.call(document.querySelectorAll('.checklist input[type="checkbox"]'));
+    if (!boxes.length) return;
+    var API = '/api/checklist';
+    var POLL_MS = 15000;
+    var pending = {}; // ids com POST em andamento — não deixa o polling sobrescrever o clique
 
-  function loadState() {
-    fetch(API, { cache: 'no-store' })
-      .then(function (r) { return r.ok ? r.json() : {}; })
-      .then(applyState)
-      .catch(function () {});
-  }
+    function updateProgress() {
+      var groups = {};
+      var totalDone = 0;
+      boxes.forEach(function (b) {
+        var g = b.dataset.group;
+        if (!groups[g]) groups[g] = { done: 0, total: 0 };
+        groups[g].total++;
+        if (b.checked) { groups[g].done++; totalDone++; }
+        var item = b.closest('.chk-item');
+        if (item) item.classList.toggle('done', b.checked);
+      });
+      document.querySelectorAll('[data-group-progress]').forEach(function (el) {
+        var g = el.getAttribute('data-group-progress');
+        var d = groups[g] || { done: 0, total: 0 };
+        el.textContent = d.done + '/' + d.total;
+      });
+      var total = boxes.length;
+      var pct = total ? Math.round((totalDone / total) * 100) : 0;
+      var bar = document.getElementById('overall-bar');
+      var label = document.getElementById('overall-label');
+      if (bar) bar.style.width = pct + '%';
+      if (label) label.textContent = totalDone + '/' + total + ' concluído (' + pct + '%)';
+    }
 
-  boxes.forEach(function (b) {
-    b.addEventListener('change', function () {
-      var checked = b.checked;
-      pending[b.id] = true;
+    function applyState(state) {
+      boxes.forEach(function (b) {
+        if (pending[b.id]) return;
+        var val = !!state[b.id];
+        if (b.checked !== val) b.checked = val;
+      });
       updateProgress();
-      fetch(API, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: b.id, checked: checked })
-      })
-        .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (state) {
-          delete pending[b.id];
-          if (state) applyState(state);
+    }
+
+    function loadState() {
+      fetch(API, { cache: 'no-store' })
+        .then(function (r) { return r.ok ? r.json() : {}; })
+        .then(applyState)
+        .catch(function () {});
+    }
+
+    boxes.forEach(function (b) {
+      b.addEventListener('change', function () {
+        var checked = b.checked;
+        pending[b.id] = true;
+        updateProgress();
+        fetch(API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: b.id, checked: checked })
         })
-        .catch(function () {
-          delete pending[b.id];
-          b.checked = !checked;
-          updateProgress();
-        });
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (state) {
+            delete pending[b.id];
+            if (state) applyState(state);
+          })
+          .catch(function () {
+            delete pending[b.id];
+            b.checked = !checked;
+            updateProgress();
+          });
+      });
     });
+
+    updateProgress();
+    loadState();
+    setInterval(loadState, POLL_MS);
+  }
+
+  function boot() {
+    var token = getToken();
+    if (!token) { showLogin(); return; }
+    fetch('/api/strategic-content', { headers: { Authorization: 'Bearer ' + token }, cache: 'no-store' })
+      .then(function (r) {
+        if (!r.ok) { clearToken(); throw new Error('Sessão expirada ou inválida. Faça login novamente.'); }
+        return r.text();
+      })
+      .then(function (html) {
+        contentEl.innerHTML = html;
+        loginWrapEl.style.display = 'none';
+        contentEl.style.display = 'block';
+        initChecklist();
+      })
+      .catch(function (e) { showLogin(e.message); });
+  }
+
+  document.getElementById('loginBtn').addEventListener('click', function () {
+    var password = pwdEl.value;
+    loginMsgEl.innerHTML = '';
+    fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: password })
+    })
+      .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+      .then(function (result) {
+        if (!result.ok) throw new Error(result.data.error || 'Falha no login.');
+        setToken(result.data.token);
+        boot();
+      })
+      .catch(function (e) { loginMsgEl.innerHTML = '<div class="msg">' + e.message + '</div>'; });
   });
 
-  updateProgress();
-  loadState();
-  setInterval(loadState, POLL_MS);
+  pwdEl.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') document.getElementById('loginBtn').click();
+  });
+
+  boot();
 })();
 </script>
 </body>
