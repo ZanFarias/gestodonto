@@ -9,6 +9,7 @@
       <a href="#organograma">Organograma</a>
       <a href="#departamentos">Departamentos</a>
       <a href="#roadmap">Roadmap 5 anos</a>
+      <a href="#custos">Custos</a>
       <a href="#marketing">Plano de Lançamento</a>
     </div>
   </div>
@@ -630,6 +631,238 @@
       <div class="milestone"><span class="yr">03</span><div class="body"><b>Estruturação</b><span>Todos os 8 departamentos operando com pelo menos uma liderança dedicada. Momento natural para avaliar uma rodada seed/anjo caso o crescimento peça caixa além do gerado organicamente.</span></div></div>
       <div class="milestone"><span class="yr">04</span><div class="body"><b>Expansão</b><span>Upsell de módulos adicionais, parcerias com associações e faculdades de odontologia, possível início de expansão regional.</span></div></div>
       <div class="milestone"><span class="yr">05</span><div class="body"><b>Consolidação</b><span>Empresa como referência no segmento de gestão para clínicas odontológicas — ponto de decisão entre rodada Série A, sustentabilidade via lucro, ou expansão internacional.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="custos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Estrutura de custos</div>
+      <h2>Quanto custa a empresa, departamento por departamento</h2>
+      <p>Pessoas e ferramentas de cada área, na Fase 1 de hoje (só os fundadores) — pra saber exatamente quanto custa manter a empresa rodando e quantos clientes são necessários pra cobrir tudo e sobrar um lucro bom pros sócios.</p>
+    </div>
+
+    <div class="notice">
+      <b>Como ler esta seção:</b> pró-labore e alguns planos de ferramenta são estimativas de ponto de partida — ajuste pros valores reais que os sócios decidirem. Quando um fundador acumula um cargo (ex: CEO cobrindo Comercial), a pessoa só é contada uma vez, na Diretoria — os outros departamentos mostram só o custo de ferramenta daquela área, sem duplicar pró-labore. Taxa do gateway de cobrança (% por transação) e uso de IA dentro do produto (Anthropic API na IA clínica) são custos variáveis que crescem com o número de clientes — não entram no total fixo abaixo, mas valem monitorar a partir dos primeiros clientes pagantes.
+    </div>
+
+    <!-- 1 Diretoria -->
+    <details class="dept" open>
+      <summary>
+        <div class="dept-head-l"><span class="num">01</span><h3>Diretoria Executiva</h3></div>
+        <div class="dept-head-r"><span class="pill pill-f1">R$ 6.095/mês</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="dept-body">
+        <div class="table-wrap">
+          <table class="roadmap-table">
+            <thead><tr><th>Item</th><th>Tipo</th><th class="num">Custo/mês</th></tr></thead>
+            <tbody>
+              <tr><td>CEO / Fundador(a) — pró-labore</td><td>Pessoa</td><td class="num">R$ 3.000</td></tr>
+              <tr><td>CTO / Fundador(a) — pró-labore</td><td>Pessoa</td><td class="num">R$ 3.000</td></tr>
+              <tr><td>Google Workspace (2 contas)</td><td>Ferramenta</td><td class="num">R$ 45</td></tr>
+              <tr><td>Gestor de senhas (1Password)</td><td>Ferramenta</td><td class="num">R$ 50</td></tr>
+              <tr><td><b>Subtotal</b></td><td></td><td class="num"><b>R$ 6.095</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <!-- 2 Produto -->
+    <details class="dept">
+      <summary>
+        <div class="dept-head-l"><span class="num">02</span><h3>Produto &amp; Tecnologia</h3></div>
+        <div class="dept-head-r"><span class="pill pill-f1">R$ 504/mês</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="dept-body">
+        <div class="table-wrap">
+          <table class="roadmap-table">
+            <thead><tr><th>Item</th><th>Tipo</th><th class="num">Custo/mês</th></tr></thead>
+            <tbody>
+              <tr><td>CTO — já contado na Diretoria</td><td>Pessoa</td><td class="num">R$ 0</td></tr>
+              <tr><td>Vercel Pro (hospedagem + functions + Blob)</td><td>Ferramenta</td><td class="num">R$ 115</td></tr>
+              <tr><td>Banco de dados gerenciado do produto</td><td>Ferramenta</td><td class="num">R$ 145</td></tr>
+              <tr><td>GitHub (repositório privado + CI)</td><td>Ferramenta</td><td class="num">R$ 55</td></tr>
+              <tr><td>Claude Code / Claude Pro (produtividade de dev)</td><td>Ferramenta &middot; IA</td><td class="num">R$ 115</td></tr>
+              <tr><td>Figma (1 editor)</td><td>Ferramenta</td><td class="num">R$ 70</td></tr>
+              <tr><td>Domínio gestodonto.com.br</td><td>Ferramenta</td><td class="num">R$ 4</td></tr>
+              <tr><td><b>Subtotal</b></td><td></td><td class="num"><b>R$ 504</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <!-- 3 Comercial -->
+    <details class="dept">
+      <summary>
+        <div class="dept-head-l"><span class="num">03</span><h3>Comercial (Vendas)</h3></div>
+        <div class="dept-head-r"><span class="pill pill-f1">R$ 230/mês</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="dept-body">
+        <div class="table-wrap">
+          <table class="roadmap-table">
+            <thead><tr><th>Item</th><th>Tipo</th><th class="num">Custo/mês</th></tr></thead>
+            <tbody>
+              <tr><td>CEO — já contado na Diretoria</td><td>Pessoa</td><td class="num">R$ 0</td></tr>
+              <tr><td>CRM (plano inicial)</td><td>Ferramenta</td><td class="num">R$ 150</td></tr>
+              <tr><td>WhatsApp Business (número + API)</td><td>Ferramenta</td><td class="num">R$ 80</td></tr>
+              <tr><td><b>Subtotal</b></td><td></td><td class="num"><b>R$ 230</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <!-- 4 Marketing -->
+    <details class="dept">
+      <summary>
+        <div class="dept-head-l"><span class="num">04</span><h3>Marketing &amp; Growth</h3></div>
+        <div class="dept-head-r"><span class="pill pill-f1">R$ 850/mês</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="dept-body">
+        <div class="table-wrap">
+          <table class="roadmap-table">
+            <thead><tr><th>Item</th><th>Tipo</th><th class="num">Custo/mês</th></tr></thead>
+            <tbody>
+              <tr><td>CEO — já contado na Diretoria</td><td>Pessoa</td><td class="num">R$ 0</td></tr>
+              <tr><td>Meta Ads (verba de mídia — ver plano de lançamento)</td><td>Ferramenta</td><td class="num">R$ 750</td></tr>
+              <tr><td>Canva Pro</td><td>Ferramenta</td><td class="num">R$ 35</td></tr>
+              <tr><td>Metricool (agendador de posts)</td><td>Ferramenta</td><td class="num">R$ 65</td></tr>
+              <tr><td><b>Subtotal</b></td><td></td><td class="num"><b>R$ 850</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <!-- 5 CS -->
+    <details class="dept">
+      <summary>
+        <div class="dept-head-l"><span class="num">05</span><h3>Customer Success &amp; Suporte</h3></div>
+        <div class="dept-head-r"><span class="pill pill-f1">R$ 0/mês</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="dept-body">
+        <div class="table-wrap">
+          <table class="roadmap-table">
+            <thead><tr><th>Item</th><th>Tipo</th><th class="num">Custo/mês</th></tr></thead>
+            <tbody>
+              <tr><td>CEO / CTO — já contados na Diretoria</td><td>Pessoa</td><td class="num">R$ 0</td></tr>
+              <tr><td>Suporte via WhatsApp Business (mesmo número do Comercial)</td><td>Ferramenta</td><td class="num">R$ 0</td></tr>
+              <tr><td>Central de ajuda (Notion público, plano grátis)</td><td>Ferramenta</td><td class="num">R$ 0</td></tr>
+              <tr><td><b>Subtotal</b></td><td></td><td class="num"><b>R$ 0</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <!-- 6 Financeiro -->
+    <details class="dept">
+      <summary>
+        <div class="dept-head-l"><span class="num">06</span><h3>Financeiro</h3></div>
+        <div class="dept-head-r"><span class="pill pill-f1">R$ 400/mês</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="dept-body">
+        <div class="table-wrap">
+          <table class="roadmap-table">
+            <thead><tr><th>Item</th><th>Tipo</th><th class="num">Custo/mês</th></tr></thead>
+            <tbody>
+              <tr><td>CEO — já contado na Diretoria</td><td>Pessoa</td><td class="num">R$ 0</td></tr>
+              <tr><td>Contador terceirizado</td><td>Serviço</td><td class="num">R$ 400</td></tr>
+              <tr><td>Gateway de cobrança recorrente (Asaas/Stripe)</td><td>Ferramenta</td><td class="num">R$ 0 fixo*</td></tr>
+              <tr><td><b>Subtotal</b></td><td></td><td class="num"><b>R$ 400</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="checklist-note">*Cobra uma taxa por transação (2–4%, variável conforme o volume) — não incluída no fixo, entra como custo por cliente pagante.</p>
+      </div>
+    </details>
+
+    <!-- 7 Jurídico -->
+    <details class="dept">
+      <summary>
+        <div class="dept-head-l"><span class="num">07</span><h3>Jurídico &amp; Compliance</h3></div>
+        <div class="dept-head-r"><span class="pill pill-f1">R$ 300/mês</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="dept-body">
+        <div class="table-wrap">
+          <table class="roadmap-table">
+            <thead><tr><th>Item</th><th>Tipo</th><th class="num">Custo/mês</th></tr></thead>
+            <tbody>
+              <tr><td>CEO — já contado na Diretoria</td><td>Pessoa</td><td class="num">R$ 0</td></tr>
+              <tr><td>Assessoria jurídica terceirizada (retainer básico)</td><td>Serviço</td><td class="num">R$ 300</td></tr>
+              <tr><td><b>Subtotal</b></td><td></td><td class="num"><b>R$ 300</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <!-- 8 Gente -->
+    <details class="dept">
+      <summary>
+        <div class="dept-head-l"><span class="num">08</span><h3>Gente &amp; Cultura</h3></div>
+        <div class="dept-head-r"><span class="pill pill-f1">R$ 0/mês</span><svg class="chev" width="18" height="18" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </summary>
+      <div class="dept-body">
+        <div class="table-wrap">
+          <table class="roadmap-table">
+            <thead><tr><th>Item</th><th>Tipo</th><th class="num">Custo/mês</th></tr></thead>
+            <tbody>
+              <tr><td>CEO — já contado na Diretoria</td><td>Pessoa</td><td class="num">R$ 0</td></tr>
+              <tr><td>Sem ferramenta dedicada até a 1ª contratação</td><td>—</td><td class="num">R$ 0</td></tr>
+              <tr><td><b>Subtotal</b></td><td></td><td class="num"><b>R$ 0</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <div class="section-head" style="margin-top:2.8rem;">
+      <div class="eyebrow">Somatório</div>
+      <h3 style="font-size:1.3rem;">Custo fixo mensal total da empresa</h3>
+      <p>Soma de todos os departamentos acima — pessoas (pró-labore dos fundadores) + ferramentas, sem os custos variáveis (taxa de gateway, uso de IA no produto).</p>
+    </div>
+    <div class="table-wrap">
+      <table class="roadmap-table">
+        <thead><tr><th>Departamento</th><th class="num">Custo/mês</th></tr></thead>
+        <tbody>
+          <tr><td>Diretoria Executiva</td><td class="num">R$ 6.095</td></tr>
+          <tr><td>Produto &amp; Tecnologia</td><td class="num">R$ 504</td></tr>
+          <tr><td>Comercial</td><td class="num">R$ 230</td></tr>
+          <tr><td>Marketing &amp; Growth</td><td class="num">R$ 850</td></tr>
+          <tr><td>Customer Success &amp; Suporte</td><td class="num">R$ 0</td></tr>
+          <tr><td>Financeiro</td><td class="num">R$ 400</td></tr>
+          <tr><td>Jurídico &amp; Compliance</td><td class="num">R$ 300</td></tr>
+          <tr><td>Gente &amp; Cultura</td><td class="num">R$ 0</td></tr>
+          <tr><td><b>Total fixo mensal (incluindo pró-labore dos 2 fundadores)</b></td><td class="num"><b>R$ 8.379</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-head" style="margin-top:2.8rem;">
+      <div class="eyebrow">Ponto de equilíbrio</div>
+      <h3 style="font-size:1.3rem;">Quantos clientes pra cobrir tudo — e sobrar lucro</h3>
+      <p>Usando o ticket médio de R$300/mês por clínica (o mesmo do <a href="#roadmap">roadmap</a>) contra o custo fixo de R$8.379/mês acima.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="roadmap-table">
+        <thead><tr><th>Cenário</th><th class="num">Clientes</th><th class="num">Lucro/mês</th><th class="num">Lucro por sócio (2)</th></tr></thead>
+        <tbody>
+          <tr><td>Ponto de equilíbrio (~0% de margem)</td><td class="num">28</td><td class="num">R$ 21</td><td class="num">R$ 11</td></tr>
+          <tr><td>Margem de ~20%</td><td class="num">35</td><td class="num">R$ 2.121</td><td class="num">R$ 1.061</td></tr>
+          <tr><td>Margem de ~30%</td><td class="num">40</td><td class="num">R$ 3.621</td><td class="num">R$ 1.811</td></tr>
+          <tr><td>Margem de ~40%</td><td class="num">47</td><td class="num">R$ 5.721</td><td class="num">R$ 2.861</td></tr>
+          <tr><td>Margem de ~50%</td><td class="num">56</td><td class="num">R$ 8.421</td><td class="num">R$ 4.211</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="checklist-note">Pra referência: a própria meta do roadmap pro Ano 1 (50 clientes) já bateria em ~R$6.621/mês de lucro — margem de ~44% — sobre esse custo fixo de hoje, antes de qualquer contratação nova.</p>
+
+    <div class="notice" style="margin-top:1.6rem;">
+      <b>Como manter barato sem cortar o que importa:</b> prioriza ferramentas de IA e automação (Claude, agentes, WhatsApp automático) antes de contratar gente nova — custo mais previsível e muito mais fácil de desligar do que uma folha de pagamento se algo não funcionar. Adia as contratações F2/F3 pros gatilhos que o próprio roadmap já define (ex: a 1ª contratação comercial só faz sentido no Ano 2). Não corte em contador, assessoria jurídica ou backup/segurança de dados — são os únicos itens desta lista onde economizar sai mais caro depois.
     </div>
   </div>
 </section>
