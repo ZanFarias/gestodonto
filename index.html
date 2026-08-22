@@ -108,7 +108,20 @@
   .nav-links { display: flex; gap: 1.4rem; font-size: .85rem; }
   .nav-links a { text-decoration: none; color: var(--ink-soft); }
   .nav-links a:hover { color: var(--accent); }
-  @media (max-width: 640px) { .nav-links { display: none; } }
+  .nav-toggle-input { display: none; }
+  .nav-toggle-btn { display: none; cursor: pointer; font-size: 1.4rem; line-height: 1; padding: .3rem .1rem; user-select: none; }
+  @media (max-width: 640px) {
+    .nav-inner { position: relative; }
+    .nav-toggle-btn { display: block; }
+    .nav-links {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      flex-direction: column; gap: 0; background: var(--bg); border-bottom: 1px solid var(--border);
+      padding: .3rem 1.75rem 1rem; box-shadow: var(--shadow);
+    }
+    .nav-links a { padding: .65rem 0; border-bottom: 1px dashed var(--border); }
+    .nav-links a:last-child { border-bottom: none; }
+    .nav-toggle-input:checked ~ .nav-links { display: flex; }
+  }
 
   /* ---------- Hero ---------- */
   .hero { padding: 4.5rem 0 3rem; }
@@ -208,6 +221,7 @@
   .role .fn { color: var(--ink-soft); font-size: .88rem; grid-column: 1 / -1; }
   .routine { display: grid; grid-template-columns: 6.4rem 1fr; gap: .8rem; padding: .55rem 0; border-bottom: 1px dashed var(--border); font-size: .9rem; }
   .routine:last-child { border-bottom: none; }
+  @media (max-width: 480px) { .routine { grid-template-columns: 1fr; gap: .15rem; } }
   .routine .cad { font-size: .72rem; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
   .routine .txt { color: var(--ink-soft); }
 
@@ -309,6 +323,7 @@
   .post-hook { font-size: 1.02rem; margin: .3rem 0 .7rem; }
   .script-row { display: grid; grid-template-columns: 8.5rem 1fr; gap: .6rem; font-size: .89rem; padding: .35rem 0; border-bottom: 1px dashed var(--border); }
   .script-row:last-of-type { border-bottom: none; }
+  @media (max-width: 640px) { .script-row { grid-template-columns: 1fr; gap: .15rem; } }
   .script-row b { color: var(--ink-soft); font-weight: 700; }
   .script-row span { color: var(--ink); }
   .post-caption { margin-top: .7rem; font-size: .86rem; color: var(--ink-soft); background: var(--surface); border-radius: 8px; padding: .6rem .8rem; border: 1px solid var(--border); }
@@ -452,6 +467,12 @@
         loginWrapEl.style.display = 'none';
         contentEl.style.display = 'block';
         initChecklist();
+        var navToggle = document.getElementById('nav-toggle');
+        if (navToggle) {
+          contentEl.querySelectorAll('.nav-links a').forEach(function (a) {
+            a.addEventListener('click', function () { navToggle.checked = false; });
+          });
+        }
       })
       .catch(function (e) { showLogin(e.message); });
   }
