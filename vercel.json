@@ -5,14 +5,12 @@
   "functions": {
     "api/schedule-post.js": { "maxDuration": 60 },
     "api/cron-publish.js": { "maxDuration": 60 },
-    "api/strategic-content.js": { "includeFiles": "api/_strategic-content.html" },
-    "api/mapa-marketing-content.js": { "includeFiles": "api/_mapa-marketing-content.html" }
+    "api/strategic-content.js": { "includeFiles": "api/_strategic-content.html" }
   },
   "routes": [
     { "src": "/api/login", "dest": "/api/login.js" },
     { "src": "/api/checklist", "dest": "/api/checklist.js" },
     { "src": "/api/strategic-content", "dest": "/api/strategic-content.js" },
-    { "src": "/api/mapa-marketing-content", "dest": "/api/mapa-marketing-content.js" },
     { "src": "/api/blob-upload", "dest": "/api/blob-upload.js" },
     { "src": "/api/schedule-post", "dest": "/api/schedule-post.js" },
     { "src": "/api/list-scheduled", "dest": "/api/list-scheduled.js" },
@@ -20,8 +18,6 @@
     { "src": "/api/cron-publish", "dest": "/api/cron-publish.js" },
     { "src": "/admin", "dest": "/admin/index.html" },
     { "src": "/admin/", "dest": "/admin/index.html" },
-    { "src": "/mapa-marketing", "dest": "/mapa-marketing.html" },
-    { "src": "/mapa-marketing/", "dest": "/mapa-marketing.html" },
     { "src": "/(.*\\.(png|jpg|jpeg|gif|svg|ico|webp|css|js|woff2?|ttf))", "dest": "/$1" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
