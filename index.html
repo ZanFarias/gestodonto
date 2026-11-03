@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GestOdonto — Mapa Estratégico Interno</title>
 <meta name="robots" content="noindex, nofollow">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%B7%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
@@ -103,14 +105,15 @@
     display: flex; align-items: center; justify-content: space-between;
     height: 3.6rem; gap: 1rem;
   }
-  .brand { display: flex; align-items: baseline; gap: .5rem; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
-  .brand .tag { font-family: var(--font-body); font-size: .68rem; color: var(--ink-faint); font-weight: 400; }
-  .nav-links { display: flex; gap: 1.4rem; font-size: .85rem; }
-  .nav-links a { text-decoration: none; color: var(--ink-soft); }
+  .brand { display: flex; align-items: center; gap: .55rem; font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; white-space: nowrap; flex: 0 0 auto; }
+  .brand img { width: 1.6rem; height: 1.6rem; display: block; border-radius: 6px; }
+  .brand .tag { font-family: var(--font-body); font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; padding-left: .55rem; border-left: 1px solid var(--border); line-height: 1.2; }
+  .nav-links { display: flex; align-items: center; gap: 1.3rem; font-size: .85rem; white-space: nowrap; }
+  .nav-links a { text-decoration: none; color: var(--ink-soft); font-weight: 500; }
   .nav-links a:hover { color: var(--accent); }
   .nav-toggle-input { display: none; }
   .nav-toggle-btn { display: none; cursor: pointer; font-size: 1.4rem; line-height: 1; padding: .3rem .1rem; user-select: none; }
-  @media (max-width: 640px) {
+  @media (max-width: 960px) {
     .nav-inner { position: relative; }
     .nav-toggle-btn { display: block; }
     .nav-links {
@@ -124,7 +127,7 @@
   }
 
   /* ---------- Hero ---------- */
-  .hero { padding: 4.5rem 0 3rem; }
+  .hero { padding-block: 4.5rem 3rem; }
   .hero h1 { font-size: clamp(2.1rem, 5vw, 3rem); margin-top: .5rem; }
   .hero .sub { color: var(--ink-soft); font-size: 1.1rem; max-width: 62ch; margin-top: 1rem; }
 
@@ -296,39 +299,6 @@
   .chk-item.done label { color: var(--ink-faint); text-decoration: line-through; text-decoration-color: var(--border); }
   .checklist-note { font-size: .82rem; color: var(--ink-faint); margin-top: 1.4rem; max-width: 62ch; }
 
-  /* ---------- Marketing / content calendar ---------- */
-  .pillar-legend { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.2rem 0 2rem; }
-  .pillar-chip {
-    font-size: .78rem; padding: .3rem .75rem; border-radius: 999px;
-    background: var(--surface-2); color: var(--ink-soft); border: 1px solid var(--border);
-  }
-  .cadence-card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
-    padding: 1.2rem 1.4rem; box-shadow: var(--shadow); margin-bottom: 2rem;
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem;
-  }
-  @media (max-width: 720px) { .cadence-card { grid-template-columns: 1fr; } }
-  .cadence-card .ck { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); font-weight: 700; margin-bottom: .35rem; }
-  .cadence-card .cv { font-size: .95rem; color: var(--ink); }
-
-  .pill-carrossel { background: var(--accent-soft); color: var(--accent); border: none; font-weight: 700; font-size: .7rem; padding: .15rem .55rem; border-radius: 999px; }
-  .pill-video { background: var(--gold-soft); color: var(--gold); border: none; font-weight: 700; font-size: .7rem; padding: .15rem .55rem; border-radius: 999px; }
-
-  .week-count { font-size: .78rem; font-weight: 700; color: var(--ink-soft); }
-
-  .post-card { border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.15rem; margin: .8rem 0; background: var(--surface-2); }
-  .post-head { display: flex; align-items: center; gap: .55rem; flex-wrap: wrap; margin-bottom: .5rem; }
-  .post-num { font-family: var(--font-display); font-weight: 800; color: var(--ink-faint); font-size: .85rem; }
-  .post-pillar { font-size: .78rem; color: var(--ink-faint); }
-  .post-hook { font-size: 1.02rem; margin: .3rem 0 .7rem; }
-  .script-row { display: grid; grid-template-columns: 8.5rem 1fr; gap: .6rem; font-size: .89rem; padding: .35rem 0; border-bottom: 1px dashed var(--border); }
-  .script-row:last-of-type { border-bottom: none; }
-  @media (max-width: 640px) { .script-row { grid-template-columns: 1fr; gap: .15rem; } }
-  .script-row b { color: var(--ink-soft); font-weight: 700; }
-  .script-row span { color: var(--ink); }
-  .post-caption { margin-top: .7rem; font-size: .86rem; color: var(--ink-soft); background: var(--surface); border-radius: 8px; padding: .6rem .8rem; border: 1px solid var(--border); }
-  .post-caption b { color: var(--ink); }
-
   footer { padding: 2.6rem 0 4rem; border-top: 1px solid var(--border); }
   footer p { color: var(--ink-faint); font-size: .82rem; max-width: 60ch; }
   footer .conf { color: var(--gold); font-weight: 700; }
@@ -337,6 +307,8 @@
   .login-wrap { max-width: 360px; margin: 6rem auto; padding: 0 1.5rem; }
   .login-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.6rem; box-shadow: var(--shadow); }
   .login-card h1 { font-size: 1.3rem; margin: 0 0 .3rem; }
+  .login-brand { display: flex; align-items: center; gap: .55rem; }
+  .login-brand img { border-radius: 6px; }
   .login-card .sub { color: var(--ink-faint); font-size: .85rem; margin-bottom: 1.4rem; }
   .login-card label { display: block; font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-faint); margin-bottom: .4rem; }
   .login-card input[type="password"] { width: 100%; padding: .65rem .7rem; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-2); color: var(--ink); font-family: inherit; font-size: .95rem; }
@@ -350,7 +322,7 @@
 
 <div class="login-wrap">
   <div id="login" class="login-card">
-    <h1>🦷 GestOdonto</h1>
+    <h1 class="login-brand"><img src="/favicon.svg" alt="" width="28" height="28">GestOdonto</h1>
     <div class="sub">Mapa estratégico interno — acesso restrito aos sócios.</div>
     <label for="pwd">Senha</label>
     <input type="password" id="pwd" placeholder="••••••••">
