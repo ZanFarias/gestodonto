@@ -357,6 +357,7 @@
     var API = '/api/checklist';
     var POLL_MS = 15000;
     var pending = {}; // ids com POST em andamento — não deixa o polling sobrescrever o clique
+    var lastLocalChange = 0; // leituras iniciadas antes do último clique são descartadas
 
     function updateProgress() {
       var groups = {};
@@ -392,9 +393,13 @@
     }
 
     function loadState() {
+      var startedAt = Date.now();
       fetch(API, { cache: 'no-store' })
-        .then(function (r) { return r.ok ? r.json() : {}; })
-        .then(applyState)
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (state) {
+          if (!state || startedAt <= lastLocalChange || Object.keys(pending).length) return;
+          applyState(state);
+        })
         .catch(function () {});
     }
 
@@ -402,16 +407,18 @@
       b.addEventListener('change', function () {
         var checked = b.checked;
         pending[b.id] = true;
+        lastLocalChange = Date.now();
         updateProgress();
         fetch(API, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ id: b.id, checked: checked })
         })
-          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (r) { if (!r.ok) throw new Error('save failed'); return r.json(); })
           .then(function (state) {
             delete pending[b.id];
-            if (state) applyState(state);
+            lastLocalChange = Date.now();
+            applyState(state);
           })
           .catch(function () {
             delete pending[b.id];
